@@ -1,0 +1,30 @@
+<div class="nav-birds">
+
+
+
+  <% if user_signed_in? %>
+
+    <%= render "shared/navbar_search_form" %>
+
+    <div class="dropdown dropleft navbar-dropdown">
+      <button type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class="nav-avatar">
+          <%= image_tag("avatar.jpg") %>
+        </div>
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+      </div>
+    </div>
+
+  <% else %>
+
+    <div class="nav-btn-login">
+      <%= link_to "Log in", new_user_session_path, class: "white btn-artcollabs btn-dark-blue btn-margin-right"%>
+      <%= link_to "Sign up", new_user_registration_path, class: "white btn-artcollabs btn-dark-blue"%>
+    </div>
+
+  <% end %>
+
+</div>
