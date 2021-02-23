@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :spots
+
+  validates :username, uniqueness: true
+  validates :username, length: { in: 2..15 }
 end
