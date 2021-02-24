@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
 
   resources :birds do
-    resources :spots
+    resources :spots, only: [ :index, :new, :create ]
   end
+
+  resources :reviews, only: [ :show, :edit, :update, :destroy ]
 
 end

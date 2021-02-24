@@ -9,6 +9,7 @@ class BirdsController < ApplicationController
 
   def new
     @bird = Bird.new
+    authorize @bird
   end
 
   def create

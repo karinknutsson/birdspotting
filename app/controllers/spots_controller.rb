@@ -10,6 +10,7 @@ class SpotsController < ApplicationController
   def new
     set_bird
     @spot = Spot.new
+    authorize @spot
   end
 
   def create
@@ -17,7 +18,7 @@ class SpotsController < ApplicationController
     @spot = Spot.new(spot_params)
     @spot.bird = @bird
     if @spot.save
-      redirect_to spots_path
+      redirect_to root_path
     else
       render :new
     end
@@ -30,13 +31,13 @@ class SpotsController < ApplicationController
   def update
     @spot = Spot.find(params[:id])
     @spot.update(spot_params)
-    redirect_to spot_path(@spot)
+    redirect_to root_path(@spot)
   end
 
   def destroy
     @spot = Spot.find(params[:id])
     @spot.destroy
-    redirect_to spots_path
+    redirect_to root_path
   end
 
   private
