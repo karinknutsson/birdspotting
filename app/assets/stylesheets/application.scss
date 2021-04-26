@@ -12,11 +12,19 @@
 @import "components/index";
 @import "pages/index";
 
-body {
-  background-color: $lavender-blue;
-}
+
 
 h1 {
-  color: $patriarch;
+  font-weight: 900;
+  font-size: 10vw;
+}
+
+h3 {
   font-weight: 700;
+  font-size: 3vw;
+}
+
+.main-container {
+  margin: 10vw auto;
+  width: 80vw;
 }
