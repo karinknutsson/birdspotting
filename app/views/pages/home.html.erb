@@ -1,3 +1,12 @@
-      <h1>Spot the Bird!</h1>
+      <div class="home-header">
+        <h1>Spot the Bird!</h1>
+      </div>
 
-      <h3>A community for bird lovers</h3>
+      <div class="home-subheader">
+        <h3>A community for bird lovers</h3>
+      </div>
+
+      <div class="home-buttons">
+        <%= button_to "Log in", new_user_session_path, class: "btn-round btn-red btn-home"%>
+        <%= button_to "Sign up", new_user_registration_path, class: "btn-round btn-white-outline btn-home"%>
+      </div>
