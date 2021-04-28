@@ -1,0 +1,41 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px $a-white inset !important;
+}
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: $a-black !important;
+}
+
+input[type=text], input[type=password] {
+  margin-bottom: 24px;
+  padding: 24px 16px;
+  background: $a-white;
+  border: 0;
+  border-radius: 8px;
+}
+
+::placeholder {
+  color: $light-grey !important;
+  font-weight: 700;
+}
+
+.login-container {
+  margin: 0 auto;
+  width: 40vw;
+  margin-top: 10vw;
+}
+
+.form-control {
+  border: 0 !important;
+}
+
+.form-inputs {
+  margin-top: 32px;
+}
+
+.form-actions {
+  text-align: center;
+}

@@ -12,17 +12,27 @@
 @import "components/index";
 @import "pages/index";
 
+body {
+  font-weight: 600;
+}
+
 textarea:focus, input:focus {
-  outline: none;
-  border-color: inherit;
-  -webkit-box-shadow: none;
-  box-shadow: none;
+  outline: none !important;
+  border-color: inherit !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
 }
 
 h1 {
   font-weight: 900;
   font-size: 8vw;
   letter-spacing: 0.3vw;
+}
+
+h2 {
+  font-weight: 800;
+  font-size: 3rem;
+  letter-spacing: 0.1rem;
 }
 
 h3 {
@@ -32,7 +42,17 @@ h3 {
 }
 
 a {
+  color: $medium-red;
   text-decoration: none;
+}
+
+a:hover, a:active {
+  color: $light-pink;
+  text-decoration: none;
+}
+
+.float-right {
+  float: right;
 }
 
 .main-container {
