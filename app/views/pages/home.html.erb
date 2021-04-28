@@ -1,3 +1,9 @@
+    <% if user_signed_in? %>
+
+      <h2>Bird of the day:</h2>
+
+    <% else %>
+
       <div class="home-header">
         <h1>Spot the Bird!</h1>
       </div>
@@ -10,3 +16,5 @@
         <%= button_to "Log in", new_user_session_path, :method => :get, class: "btn-round btn-red btn-home"%>
         <%= button_to "Sign up", new_user_registration_path, :method => :get, class: "btn-round btn-white-outline btn-home"%>
       </div>
+
+    <% end %>
