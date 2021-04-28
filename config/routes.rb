@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :users, controllers: {
         sessions: 'users/sessions'
       }
@@ -13,6 +12,7 @@ Rails.application.routes.draw do
     resources :spots, only: [ :index, :new, :create ]
   end
 
-  resources :reviews, only: [ :show, :edit, :update, :destroy ]
+  get 'daily', to: 'birds#daily', as: :daily_bird
 
+  resources :reviews, only: [ :show, :edit, :update, :destroy ]
 end

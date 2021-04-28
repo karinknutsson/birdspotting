@@ -4,4 +4,8 @@ class BirdPolicy < ApplicationPolicy
       scope.all
     end
   end
+
+  def daily?
+    true
+  end
 end
