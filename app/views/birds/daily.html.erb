@@ -1,14 +1,13 @@
       <div class="daily-container">
-        <div class="daily-title">
+        <span class="daily-title">
           Bird of the day
-        </div>
-        <h4><%= @bird.name %></h4>
-        <br>
-        <br>
+        </span>
         <div class="daily-img-container">
           <%= cl_image_tag(@bird.image.key) %>
           <br>
           <%= @bird.credit %>
         </div>
+        <br><br><br>
+        <h4><%= @bird.name %></h4>
       </div>
 

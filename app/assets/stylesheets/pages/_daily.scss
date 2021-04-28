@@ -1,5 +1,5 @@
 .daily-container {
-  margin-top: 10vw;
+  margin: 10vw auto;
   width: 50vw;
 }
 
@@ -12,11 +12,12 @@
 }
 
 .daily-img-container {
-  width: 500px;
-  height: 520px;
+  width: 300px;
+  height: 320px;
   color: $medium-grey;
   font-size: 0.6rem;
   img {
     width: 100%;
   }
+  float: right;
 }
