@@ -54,6 +54,6 @@ class BirdsController < ApplicationController
   private
 
   def bird_params
-    params.require(:birds).permit(:name, :latin_name, :image, :description)
+    params.require(:bird).permit(:name, :latin_name, :image, :description)
   end
 end
