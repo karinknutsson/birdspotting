@@ -8,6 +8,6 @@
           <%= @bird.credit %>
         </div>
         <br><br><br>
-        <h4><%= @bird.name %></h4>
+        <h4><%= link_to @bird.name, bird_path(@bird.id) %></h4>
       </div>
 

@@ -5,6 +5,7 @@ class BirdsController < ApplicationController
 
   def show
     @bird = Bird.find(params[:id])
+    authorize @bird
   end
 
   def new
@@ -44,6 +45,8 @@ class BirdsController < ApplicationController
   def daily
     @bird = Bird.all.sample
     authorize @bird
+    @spots = Spot.all
+    authorize @spots
   end
 
   private

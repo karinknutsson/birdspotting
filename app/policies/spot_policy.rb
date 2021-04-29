@@ -32,4 +32,8 @@ class SpotPolicy < ApplicationPolicy
   def destroy?
     true
   end
+
+  def daily?
+    true
+  end
 end

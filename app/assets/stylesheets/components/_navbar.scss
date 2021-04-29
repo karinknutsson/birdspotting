@@ -3,11 +3,15 @@ h2.navbar {
   color: $cream;
   font-weight: 900;
   font-size: 2.6rem;
+  a, a:hover, a:active, a:visited {
+    color: $cream;
+    text-decoration: none;
+  }
 }
 
 .nav-birds {
   height: 100px;
-  background: $medium-green;
+  background: $emerald;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -18,7 +22,7 @@ h2.navbar {
   width: 64px;
   height: 64px;
   color: $cream;
-  background: $warm-red;
+  background: $red-sand;
   font-family: inherit;
   font-weight: 800;
   font-size: 0.8rem;
