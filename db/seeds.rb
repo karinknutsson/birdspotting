@@ -1,7 +1,16 @@
 require 'open-uri'
 require 'json'
+require 'faker'
+
+puts ""
+puts "::::::::::::::::::: 💣💥 DESTROY ALL IN DB 🔥🔥 :::::::::::::::::::"
 
 Bird.destroy_all
+User.destroy_all
+Spot.destroy_all
+
+puts ""
+puts ":::::::::::::::::::: 🐣🐥 CREATING BIRDS 🦅🦉 :::::::::::::::::::::"
 
 magpie = Bird.create(name: "Eurasian magpie", latin_name: "Pica pica", credit: "By Pierre-Selim - Flickr: Pica pica, CC BY-SA 2.0,\nhttps://commons.wikimedia.org/w/index.php?curid=19400996",
                      description: "The Eurasian magpie or common magpie (Pica pica) is a resident breeding bird throughout the northern part of the Eurasian continent. It is one of several birds in the crow family designated magpies, and belongs to the Holarctic radiation of \"monochrome\" magpies. In Europe, \"magpie\" is used by English speakers as a synonym for the Eurasian magpie: the only other magpie in Europe is the Iberian magpie (Cyanopica cooki), which is limited to the Iberian Peninsula.\n\nThe Eurasian magpie is one of the most intelligent birds, and it is believed to be one of the most intelligent of all non-human animals. The expansion of its nidopallium is approximately the same in its relative size as the brain of chimpanzees, gorillas, orangutans and humans. It is the only bird known to pass the mirror test, along with very few other non-avian species."
@@ -37,3 +46,29 @@ egyptian_vulture = Bird.create(name: "Egyptian vulture", latin_name: "Neophron p
 image = URI.open("https://res.cloudinary.com/diucx7fqo/image/upload/v1619608996/Neophron_percnopterus_-_01_uaexsw.jpg")
 egyptian_vulture.image.attach(io: image, filename: "egyptian_vulture", content_type: "image/png")
 egyptian_vulture.save
+
+
+puts ""
+puts ":::::::::::::::::::: 🧕👩‍🦱 CREATING USERS 🧓👵 :::::::::::::::::::::"
+
+20.times do
+  username = "123456789123456789"
+  while username.length > 15
+    username = Faker::Internet.username
+  end
+  User.create!(email: Faker::Internet.email, username: username, password: "sdfjkl")
+end
+
+
+puts ""
+puts ":::::::::::::::::::: 🐣🐥 CREATING SPOTS 🦅🦉 :::::::::::::::::::::"
+
+40.times do
+  Spot.create!(bird: Bird.all.sample, user: User.all.sample, spot_date: Date.today-rand(1000))
+end
+
+
+puts ""
+puts ":::::::::::::::::::::: ✨✨ SEEDS DONE ✨✨ :::::::::::::::::::::::"
+puts ""
+puts ""
