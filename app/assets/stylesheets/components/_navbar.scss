@@ -10,11 +10,42 @@ h2.navbar {
 }
 
 .nav-birds {
+  /* padding-right: 40px; */
   height: 100px;
   background: $emerald;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-btn {
+  margin-right: 24px;
+  padding: 8px;
+  color: $cream;
+  background: rgba(0, 0, 0, 0);
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 0.8rem;
+  border-radius: 100px;
+  border: 0;
+}
+
+.spot-btn {
+  margin: 0 64px 0 24px;
+  width: 72px;
+  height: 72px;
+  color: $cream;
+  background: $red-sand;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 0.8rem;
+  border-radius: 100px;
+  border: 0;
 }
 
 #dropdownMenuButton {

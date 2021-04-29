@@ -13,6 +13,12 @@
   border: 0;
 }
 
+.btn-red-outline {
+  color: $red-sand;
+  background: rgba(0, 0, 0, 0);
+  border: 3px solid $red-sand;
+}
+
 .btn-white-outline {
   color: $a-white;
   background: rgba(0, 0, 0, 0);
@@ -26,6 +32,7 @@
 .btn-submit {
   margin-top: 12px;
   padding: 11px 80px;
+  color: $a-white;
   font-family: inherit;
   font-weight: 800;
   font-size: 1.2rem;
