@@ -15,8 +15,6 @@ Rails.application.routes.draw do
 
   get 'daily', to: 'birds#daily', as: :daily_bird
 
-  get '/users/:id', to: 'pages#profile', as: 'profile'
+  get '/profile/:id', to: 'pages#profile', as: 'profile'
   get 'settings', to: 'pages#settings', as: 'settings'
-
-  # resources :reviews, only: [ :show, :edit, :update, :destroy ]
 end
