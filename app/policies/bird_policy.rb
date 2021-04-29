@@ -4,4 +4,16 @@ class BirdPolicy < ApplicationPolicy
       scope.all
     end
   end
+
+  def index?
+    true
+  end
+
+  def show?
+    true
+  end
+
+  def daily?
+    true
+  end
 end
