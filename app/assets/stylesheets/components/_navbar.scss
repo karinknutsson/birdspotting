@@ -17,6 +17,32 @@ h2.navbar {
   justify-content: space-between;
 }
 
+.nav-links {
+  display: flex;
+}
+
+.nav-btn {
+  margin-right: 32px;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 0.8rem;
+  border-radius: 100px;
+  border: 0;
+}
+
+.spot-btn {
+  margin-right: 64px;
+  width: 72px;
+  height: 72px;
+  color: $cream;
+  background: $red-sand;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 0.8rem;
+  border-radius: 100px;
+  border: 0;
+}
+
 #dropdownMenuButton {
   margin-right: 64px;
   width: 64px;

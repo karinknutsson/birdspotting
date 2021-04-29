@@ -4,15 +4,19 @@ Rails.application.routes.draw do
       }
 
   root to: 'pages#home'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   get 'about', to: 'pages#about'
 
-  resources :birds do
-    resources :spots, only: [ :index, :new, :create ]
+  resources :birds
+
+  resources :users do
+    resources :spots, only: [ :index, :new, :create, :destroy ]
   end
 
   get 'daily', to: 'birds#daily', as: :daily_bird
 
-  resources :reviews, only: [ :show, :edit, :update, :destroy ]
+  get '/users/:id', to: 'pages#profile', as: 'profile'
+  get 'settings', to: 'pages#settings', as: 'settings'
+
+  # resources :reviews, only: [ :show, :edit, :update, :destroy ]
 end
