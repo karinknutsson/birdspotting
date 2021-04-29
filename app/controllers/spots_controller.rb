@@ -8,15 +8,12 @@ class SpotsController < ApplicationController
   end
 
   def new
-    set_bird
     @spot = Spot.new
     authorize @spot
   end
 
   def create
-    set_bird
     @spot = Spot.new(spot_params)
-    @spot.bird = @bird
     if @spot.save
       redirect_to root_path
     else
@@ -47,6 +44,6 @@ class SpotsController < ApplicationController
   end
 
   def spot_params
-    params.require(:spots).permit(:date, :time, :location, :number, :bird_id, :user_id)
+    params.require(:spots).permit(:spot_date, :time, :location, :number, :bird_id, :user_id)
   end
 end

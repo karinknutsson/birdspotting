@@ -3,10 +3,9 @@
         <h2 class="navbar"><%= link_to "Spot the Bird", daily_bird_path %></h2>
 
         <div class="nav-links">
-          <%= link_to "Profile", profile_path(current_user), method: :get, class: "nav-btn" %>
-          <%= link_to "Settings", settings_path(current_user), method: :get, class: "nav-btn" %>
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-btn" %>
-
+          <%= button_to "Profile", profile_path(current_user), method: :get, class: "nav-btn" %>
+          <%= button_to "Settings", settings_path(current_user), method: :get, class: "nav-btn" %>
+          <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "nav-btn" %>
           <%= button_to "New spot", new_user_spot_path(current_user), method: :get, class: "spot-btn" %>
         </div>
 
