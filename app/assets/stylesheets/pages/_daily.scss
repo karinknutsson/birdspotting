@@ -1,23 +1,57 @@
+li {
+  margin: 12px;
+}
+
 .daily-container {
   margin: 10vw auto;
-  width: 50vw;
+  width: 60vw;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.daily-info {
+  width: 50%;
+  margin-right: 3vw;
+  h4 {
+    margin: 32px 0 16px 0;
+  }
+  h5 {
+    margin-top: 24px;
+    font-size: 1rem;
+    font-weight: 800;
+  }
+  h6 {
+    font-size: 1rem;
+    font-weight: 500;
+    font-style: italic;
+  }
+  li {
+    margin: 6px 0;
+    font-size: 0.9rem;
+  }
 }
 
 .daily-title {
+  margin: 0 auto;
   padding: 12px 32px;
   color: $cream;
   background: $light-emerald;
   font-weight: 800;
   border-radius: 30px;
+  display: table;
 }
 
 .daily-img-container {
   width: 300px;
   height: 320px;
-  color: $medium-grey;
-  font-size: 0.6rem;
   img {
     width: 100%;
+  }
+  p {
+    margin: 8px 0;
+    color: $medium-grey;
+    font-size: 0.6rem;
   }
   float: right;
 }

@@ -1,20 +1,23 @@
       <div class="daily-container">
-        <span class="daily-title">
-          Bird of the day
-        </span>
+        <div class="daily-info">
+          <span class="daily-title">
+            Bird of the day
+          </span>
+          <h4><%= link_to @bird.name, bird_path(@bird.id) %></h4>
+          <h6><%= @bird.latin_name %></h6>
+          <div class="daily-spots">
+            <h5>Recent spots</h5>
+            <ul>
+              <% @spots.each do |spot| %>
+                <li><%= spot.user.username %> at <%= spot.spot_date %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
         <div class="daily-img-container">
           <%= cl_image_tag(@bird.image.key) %>
-          <br>
-          <%= @bird.credit %>
+          <p><%= @bird.credit %></p>
         </div>
-        <br><br><br>
-        <h4><%= link_to @bird.name, bird_path(@bird.id) %></h4>
-        <div class="daily-spots">
-          <ul>
-            <% @spots.each do |spot| %>
-              <li>Spotted by <%= spot.user.username %> at <%= spot.spot_date %></li>
-            <% end %>
-          </ul>
-        </div>
+
       </div>
 
