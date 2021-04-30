@@ -1,1 +1,5 @@
-spot
+      <div class="spot-container">
+          <h4><%= link_to @spot.bird.name, bird_path(@spot.bird_id) %></h4>
+          <h6><%= @spot.bird.latin_name %></h6>
+
+      </div>

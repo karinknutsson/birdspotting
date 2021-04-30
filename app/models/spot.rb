@@ -2,6 +2,8 @@ class Spot < ApplicationRecord
   belongs_to :bird
   belongs_to :user
 
+  has_one_attached :photo
+
   validates :bird_id, presence: true
   validates :number, presence: true
 

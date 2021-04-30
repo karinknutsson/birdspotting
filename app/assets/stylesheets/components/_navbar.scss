@@ -19,6 +19,7 @@ h2.navbar {
 }
 
 .nav-links {
+  margin-right: 40px;
   display: flex;
   align-items: center;
 }
@@ -36,7 +37,7 @@ h2.navbar {
 }
 
 .spot-btn {
-  margin: 0 64px 0 24px;
+  margin: 0 30px 0 6px;
   width: 72px;
   height: 72px;
   color: $cream;
@@ -48,15 +49,3 @@ h2.navbar {
   border: 0;
 }
 
-#dropdownMenuButton {
-  margin-right: 64px;
-  width: 64px;
-  height: 64px;
-  color: $cream;
-  background: $red-sand;
-  font-family: inherit;
-  font-weight: 800;
-  font-size: 0.8rem;
-  border-radius: 100px;
-  border: 0;
-}
