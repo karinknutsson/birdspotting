@@ -1,1 +1,10 @@
-user profile
+
+      <div class="profile-pic user-avatar">
+        <% if @user.avatar.attached? %>
+          <%= cl_image_tag(@user.avatar.key) %>
+        <% else %>
+          <div class="avatar-container">
+            <%= image_tag "avatar_default_grey.png" %>
+          </div>
+        <% end %>
+      </div>

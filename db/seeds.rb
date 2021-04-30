@@ -4,6 +4,7 @@ require 'faker'
 
 
 puts ""
+puts ""
 puts "::::::::::::::::::: 💣💥 DESTROY ALL IN DB 🔥🔥 :::::::::::::::::::"
 
 Spot.destroy_all
@@ -55,12 +56,55 @@ egyptian_vulture.save
 puts ""
 puts "::::::::::::::::::::: 🧕👩‍🦱 CREATE USERS 🧓👵 ::::::::::::::::::::::"
 
+@avatar_count = -1
+
+def avatar_generator
+  avatar = [
+  "https://res.cloudinary.com/diucx7fqo/image/upload/v1619536655/adult-baseball-cap-black-t-shirt-1211480-ID12098-900x600_tfpxxh.jpg",
+  "https://res.cloudinary.com/diucx7fqo/image/upload/v1619536673/action-adult-blur-620336-ID12049-900x600_tndkfe.jpg",
+  "https://res.cloudinary.com/diucx7fqo/image/upload/v1619536681/abstract-art-bright-682025-ID12041-900x600_voqp24.jpg",
+  "https://res.cloudinary.com/diucx7fqo/image/upload/v1619536702/Top_Hijab_Images_collection_Muslim_women_Girls_183_-ID180788-900x599_rvjwaq.jpg",
+  "https://res.cloudinary.com/diucx7fqo/image/upload/v1619536970/adult-automobile-automotive-839011-ID12089-900x600_et7pfl.jpg",
+  "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537033/adult-art-checking-phone-296654-ID12084-900x600_w9e7fq.jpg",
+  "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537121/adult-beautiful-cap-1191483-ID12116-900x600_uddjkm.jpg",
+  "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537114/adult-beautiful-beautiful-girl-892220-ID12105-900x600_u7pfss.jpg",
+  "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537131/adult-beautiful-beauty-1035682-ID12106-900x600_hwneh5.jpg",
+  "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537232/adult-close-up-cold-1002406-ID12134-599x900_uj8uot.jpg",
+  "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537247/adult-bob-marley-city-1194419-ID12125-900x609_tcg99h.jpg",
+  "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537253/adult-beautiful-beauty-1054422-ID12107-900x544_czxbiz.jpg",
+  "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537523/backpack-blur-city-1205379-ID12213-900x720_b0zoku.jpg",
+  "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537546/blurred-background-close-up-colorful-1229177-ID12278-900x600_zisykg.jpg",
+  "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537535/beautiful-beauty-face-1180023-ID12230-900x599_c3vlra.jpg",
+  "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537554/bow-tie-eyeglasses-eyewear-173295-ID12287-900x691_gzptyh.jpg",
+  "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537634/casual-emotional-facial-expression-1182312-ID12313-900x600_t64xns.jpg",
+  "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537715/cigarette-close-up-daytime-963444-ID12320-900x600_ge679g.jpg",
+  "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537725/face-facial-hair-fine-looking-614810-ID12346-900x769_coajyh.jpg",
+  "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537893/attractive-beautiful-beauty-1147395-ID12408-900x600_ojch6w.jpg",
+  "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537882/adult-blur-boardwalk-567459-ID12377-900x601_h7c9vj.jpg",
+  "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537904/environment-festival-girl-690729-ID12345-900x600_le89ww.jpg"
+  ]
+
+  if @avatar_count < avatar.length
+    @avatar_count += 1
+    avatar[@avatar_count]
+  else
+    avatar_count = 0
+    avatar[@avatar_count]
+  end
+end
+
+counter = 0
+
 20.times do
   username = "123456789123456789"
   while username.length > 15
     username = Faker::Internet.username
   end
-  User.create!(email: Faker::Internet.email, username: username, password: "sdfjkl")
+  user = User.create(email: Faker::Internet.email, username: username, password: "sdfjkl")
+  image = URI.open(avatar_generator)
+  user.avatar.attach(io: image, filename: "user#{counter}", content_type: "image/png")
+  user.save
+  counter += 1
 end
 
 
