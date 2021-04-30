@@ -1,0 +1,34 @@
+.profile-container {
+  margin: 10vw auto;
+  width: 70vw;
+}
+
+.profile-content {
+  display: flex;
+  align-items: flex-start;
+}
+
+.profile-info {
+  font-size: 0.9rem;
+  p {
+    margin: 24px 24px 24px 0;
+    line-height: 1.8rem;
+  }
+  li {
+    margin: 8px 0;
+    font-size: 0.8rem;
+  }
+}
+
+.profile-spots {
+  margin: 24px 0;
+}
+
+.profile-pic {
+  img {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+  }
+}
+

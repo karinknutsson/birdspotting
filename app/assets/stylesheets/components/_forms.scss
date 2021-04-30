@@ -19,15 +19,24 @@ input[type=text], input[type=password], input[type=email] {
   // border-radius: 8px;
 }
 
+textarea {
+  resize: none;
+  font-weight: 700 !important;
+}
+
 ::placeholder {
   color: $light-grey !important;
   font-weight: 700;
 }
 
 .login-container {
-  margin: 0 auto 20vw auto;
+  margin: 10vw auto 20vw auto;
   width: 40vw;
-  margin-top: 10vw;
+}
+
+.form-container {
+  margin: 10vw auto;
+  width: 40vw;
 }
 
 .form-control {
@@ -51,6 +60,10 @@ input[type=text], input[type=password], input[type=email] {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.centered {
+  text-align: center;
 }
 
 // .bird-box {
