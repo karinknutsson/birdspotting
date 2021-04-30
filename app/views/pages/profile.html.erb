@@ -1,10 +1,29 @@
+      <div class="profile-container">
 
-      <div class="profile-pic user-avatar">
-        <% if @user.avatar.attached? %>
-          <%= cl_image_tag(@user.avatar.key) %>
-        <% else %>
-          <div class="avatar-container">
-            <%= image_tag "avatar_default_grey.png" %>
+        <div class="profile-info">
+          <h4><%= @user.username %></h4>
+          <p>
+            <%= @user.bio %>
+          </p>
+
+          <div class="profile-spots">
+            <h6>Recent spots</h6>
+            <ul>
+              <% @recent_spots.each do |spot| %>
+                <li><%= spot.bird.name %> at <%= spot.location %> on <%= spot.spot_date %></li>
+              <% end %>
+            </ul>
           </div>
-        <% end %>
+        </div>
+
+        <div class="profile-pic">
+          <% if @user.avatar.attached? %>
+            <%= cl_image_tag(@user.avatar.key) %>
+          <% else %>
+            <!-- <div class="avatar-container"> -->
+              <%= image_tag "avatar_default_grey.png" %>
+            <!-- </div> -->
+          <% end %>
+        </div>
+
       </div>

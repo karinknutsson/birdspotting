@@ -7,6 +7,7 @@ class PagesController < ApplicationController
   def profile
     @user = User.find(params[:id])
     @spots = Spot.where(user: @user)
+    @recent_spots = Spot.where(user: @user).order(spot_date: :desc).limit(10)
   end
 
   def settings
