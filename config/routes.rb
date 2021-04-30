@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :birds
 
   resources :users do
-    resources :spots, only: [ :index, :new, :create, :destroy ]
+    resources :spots
   end
 
   get 'daily', to: 'birds#daily', as: :daily_bird

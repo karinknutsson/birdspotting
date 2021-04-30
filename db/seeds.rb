@@ -2,15 +2,18 @@ require 'open-uri'
 require 'json'
 require 'faker'
 
+
 puts ""
 puts "::::::::::::::::::: 💣💥 DESTROY ALL IN DB 🔥🔥 :::::::::::::::::::"
 
+Spot.destroy_all
 Bird.destroy_all
 User.destroy_all
-Spot.destroy_all
+
+
 
 puts ""
-puts ":::::::::::::::::::: 🐣🐥 CREATING BIRDS 🦅🦉 :::::::::::::::::::::"
+puts "::::::::::::::::::::: 🐣🐥 CREATE BIRDS 🦅🦉 ::::::::::::::::::::::"
 
 magpie = Bird.create(name: "Eurasian magpie", latin_name: "Pica pica", credit: "By Pierre-Selim - Flickr: Pica pica, CC BY-SA 2.0,\nhttps://commons.wikimedia.org/w/index.php?curid=19400996",
                      description: "The Eurasian magpie or common magpie (Pica pica) is a resident breeding bird throughout the northern part of the Eurasian continent. It is one of several birds in the crow family designated magpies, and belongs to the Holarctic radiation of \"monochrome\" magpies. In Europe, \"magpie\" is used by English speakers as a synonym for the Eurasian magpie: the only other magpie in Europe is the Iberian magpie (Cyanopica cooki), which is limited to the Iberian Peninsula.\n\nThe Eurasian magpie is one of the most intelligent birds, and it is believed to be one of the most intelligent of all non-human animals. The expansion of its nidopallium is approximately the same in its relative size as the brain of chimpanzees, gorillas, orangutans and humans. It is the only bird known to pass the mirror test, along with very few other non-avian species."
@@ -48,8 +51,9 @@ egyptian_vulture.image.attach(io: image, filename: "egyptian_vulture", content_t
 egyptian_vulture.save
 
 
+
 puts ""
-puts ":::::::::::::::::::: 🧕👩‍🦱 CREATING USERS 🧓👵 :::::::::::::::::::::"
+puts "::::::::::::::::::::: 🧕👩‍🦱 CREATE USERS 🧓👵 ::::::::::::::::::::::"
 
 20.times do
   username = "123456789123456789"
@@ -60,12 +64,16 @@ puts ":::::::::::::::::::: 🧕👩‍🦱 CREATING USERS 🧓👵 :::::::::::::
 end
 
 
+
 puts ""
-puts ":::::::::::::::::::: 🐣🐥 CREATING SPOTS 🦅🦉 :::::::::::::::::::::"
+puts "::::::::::::::::::::: 🐣🐥 CREATE SPOTS 🦅🦉 :::::::::::::::::::::::"
+
+locations = %w[Berlin Acapulco Toluca Cancun Quito Paris London Moscow Kyoto Vancouver Rome Palermo Cairo Khartoum Juba Abuja Abidjan Ulaanbaatar Dalian Bismarck Minneapolis Stockholm Oslo Helsinki Durango Toledo]
 
 40.times do
-  Spot.create!(bird: Bird.all.sample, user: User.all.sample, spot_date: Date.today-rand(1000))
+  Spot.create!(bird: Bird.all.sample, user: User.all.sample, spot_date: Date.today-rand(1000), location: locations.sample, number: rand(20) + 1)
 end
+
 
 
 puts ""

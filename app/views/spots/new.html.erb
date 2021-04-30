@@ -1,4 +1,40 @@
       <div class="spot-form-container">
         <h4>New spot</h4>
-
+        <%= simple_form_for [@user, @spot] do |f| %>
+          <div class="form-inputs">
+            <div class="label-input">
+              Bird species:
+              <%= f.collection_select :bird_id, Bird.order(:name),:id,:name, include_blank: true,
+                                      input_html: { class: "bird-box" } %>
+              <br>
+              Species not found? <%= link_to "Add new bird", new_bird_path %>
+            </div>
+            <div class="label-input">
+              Location:
+              <%= f.input :location,
+                          required: true,
+                          label: false,
+                          input_html: { placeholder: "address or city" } %>
+            </div>
+            <div class="label-input">
+              Number of birds:
+              <%= f.input :number,
+                          required: true,
+                          label: false,
+                          input_html: { min: '1' } %>
+            </div>
+            <div class="label-input">
+              Date of spot:
+              <%= f.input :spot_date,
+                          required: true,
+                          label: false %>
+            </div>
+          </div>
+          <div class="form-actions">
+            <%= f.button :submit, "Submit", class: "btn-submit btn-red btn-fill" %>
+          </div>
+        <% end %>
       </div>
+
+
+
