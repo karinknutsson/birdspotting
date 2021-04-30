@@ -18,11 +18,11 @@ class SpotsController < ApplicationController
     @spot = Spot.find(params[:id])
     authorize @spot
 
-    @map_spot = @spot if (spot.latitude != nil && spot.longitude != nil)
-    @markers = {
+    @map_spot = @spot if !@spot.latitude.nil? && !@spot.longitude.nil?
+    @markers = [{
       lng: @spot.longitude,
-      lat: spot.latitude
-    }
+      lat: @spot.latitude
+    }]
   end
 
   def new
