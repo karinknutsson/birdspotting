@@ -10,7 +10,7 @@
             <h6>Recent spots</h6>
             <ul>
               <% @recent_spots.each do |spot| %>
-                <li><%= spot.bird.name %> at <%= spot.location %> on <%= spot.spot_date %></li>
+                <li><%= spot.bird.name %> at <%= spot.location %>
               <% end %>
             </ul>
           </div>
