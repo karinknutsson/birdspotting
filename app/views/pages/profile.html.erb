@@ -12,7 +12,7 @@
               <h6>Recent spots</h6>
               <ul>
                 <% @recent_spots.each do |spot| %>
-                  <li><%= spot.bird.name %> in <%= spot.location %></li>
+                  <li><%= link_to "#{spot.bird.name} in #{spot.location}", user_spot_path(@user, spot) %></li>
                 <% end %>
               </ul>
             </div>

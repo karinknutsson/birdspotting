@@ -3,10 +3,12 @@ class SpotsController < ApplicationController
 
   def index
     @spots = Spot.all
+    authorize @spots
   end
 
   def show
     @spot = Spot.find(params[:id])
+    authorize @spot
   end
 
   def new
@@ -42,6 +44,7 @@ class SpotsController < ApplicationController
   end
 
   private
+
   def set_user
     @user = User.find(params[:user_id])
   end
