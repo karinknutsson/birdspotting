@@ -4,11 +4,25 @@ class SpotsController < ApplicationController
   def index
     @spots = Spot.all
     authorize @spots
+
+    @map_spots = Spot.where.not(latitude: nil, longitude: nil)
+    @markers = @map_spots.map do |spot|
+      {
+        lng: spot.longitude,
+        lat: spot.latitude
+      }
+    end
   end
 
   def show
     @spot = Spot.find(params[:id])
     authorize @spot
+
+    @map_spot = @spot if (spot.latitude != nil && spot.longitude != nil)
+    @markers = {
+      lng: @spot.longitude,
+      lat: spot.latitude
+    }
   end
 
   def new
