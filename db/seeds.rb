@@ -97,13 +97,13 @@ counter = 0
 
 locations = %w[Berlin Acapulco Toluca Cancun Quito Paris London Moscow Kyoto Vancouver Rome Palermo Cairo Khartoum Juba Abuja Abidjan Ulaanbaatar Dalian Bismarck Minneapolis Stockholm Oslo Helsinki Durango Toledo]
 
-20.times do
-  username = "123456789123456789"
+15.times do
+  username = Faker::Internet.username
   while username.length > 15
     username = Faker::Internet.username
   end
   user = User.create(email: Faker::Internet.email, username: username, password: "sdfjkl",
-                     bio: "My name is #{username.capitalize}, I live in #{locations.sample} and I love birds. My favorite bird is #{Bird.all.sample}.")
+                     bio: "My name is #{Faker::Name.first_name}, I live in #{locations.sample} and I love birds. My favorite bird is #{Bird.all.sample.name}.")
   image = URI.open(avatar_generator)
   user.avatar.attach(io: image, filename: "user#{counter}", content_type: "image/png")
   user.save
@@ -115,7 +115,7 @@ end
 puts ""
 puts "::::::::::::::::::::: 🐣🐥 CREATE SPOTS 🦅🦉 :::::::::::::::::::::::"
 
-40.times do
+100.times do
   Spot.create!(bird: Bird.all.sample, user: User.all.sample, spot_date: Date.today-rand(1000), location: locations.sample, number: rand(20) + 1)
 end
 
