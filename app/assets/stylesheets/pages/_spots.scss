@@ -7,7 +7,32 @@
 .spot-container {
   margin: 0 auto 10vw auto;
   width: 70vw;
+}
+
+.spot-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.spot-user {
+  h5 {
+    font-size: 0.9rem;
+  }
   h6 {
+    margin-top: 16px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+}
+
+.spot-info {
+  width: 70%;
+  h5 {
+    margin-bottom: 16px;
+    font-size: 1.2rem;
+  }
+  h6 {
+    margin-bottom: 32px;
     font-size: 0.9rem;
     font-weight: 500;
     font-style: italic;
@@ -18,10 +43,24 @@
   }
 }
 
+.spot-user-pic {
+  img {
+    width: 96px;
+    height: 96px;
+    border-radius: 50px;
+    object-fit: cover;
+  }
+}
 
+.spot-thumbs-container {
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .spot-thumb {
-  width: 64px;
+  margin: 8px 16px 8px 0;
+  width: 96px;
   height: 64px;
   img {
     width: 100%;
