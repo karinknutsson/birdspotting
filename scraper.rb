@@ -47,6 +47,7 @@ def scrape_wiki(wiki_name)
     description += p.text.strip
   end
   description.gsub!(/\[\d\]/, '')
+  description.gsub!("(#{latin_name}) ", '')
 
   return [latin_name, description]
 end
@@ -57,10 +58,11 @@ def scrape_and_print(bird)
   p scrape_wiki(wiki_name)
 end
 
-bird = 'euraSian MAGPIE'
+bird = 'Pacific Gull'
+scrape_and_print(bird)
+
+bird = 'Pheasant pigeon'
 scrape_and_print(bird)
 
 bird = "WILSON'S STORM PETREL"
 scrape_and_print(bird)
-
-# name = element.search('.brand-bg').search('h1').text.strip
