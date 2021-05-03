@@ -16,12 +16,25 @@
                 <%= link_to image_tag "avatar_default.png", profile_path(@user) %>
               <% end %>
             </div>
-            <h6>
-              Spotted by:
-            </h6>
-            <h5>
-              <%= link_to @user.username, profile_path(@user) %>
-            </h5>
+            <ul>
+              <li>
+                Spotted by:
+                <br>
+                <%= link_to @user.username, profile_path(@user) %>
+              </li>
+              <li>
+                Date:
+                <br>
+                <%= @spot.spot_date %>
+              </li>
+              <% if @spot.time != nil %>
+                <li>
+                  Time:
+                  <br>
+                  <%= @spot.time %>
+                </li>
+              <% end %>
+            </ul>
           </div>
 
           <div class="spot-info">
@@ -29,7 +42,7 @@
               <% if @spot.number == 1 %>
                 One <%= link_to @spot.bird.name.downcase, bird_path(@spot.bird_id) %> spotted in <%= @spot.location %>
               <% else %>
-                <%= @spot.number %> <%= link_to "#{@spot.bird.name.downcase}s", bird_path(@spot.bird_id) %> spotted on <%= @spot.spot_date %>
+                <%= @spot.number %> <%= link_to "#{@spot.bird.name.downcase}s", bird_path(@spot.bird_id) %> spotted in <%= @spot.location %>
               <% end %>
             </h5>
             <h6>

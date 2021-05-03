@@ -4,12 +4,13 @@
 }
 
 .profile-content {
+  margin-bottom: 24px;
   display: flex;
   align-items: flex-start;
+  justify-content: space-between;
 }
 
 .profile-info {
-  width: 80%;
   font-size: 0.9rem;
   p {
     margin: 24px 24px 24px 0;
@@ -26,6 +27,7 @@
 }
 
 .profile-pic {
+  width: 320px;
   img {
     width: 320px;
     height: 320px;
