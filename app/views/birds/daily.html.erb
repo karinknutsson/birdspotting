@@ -9,7 +9,9 @@
             <h5>Recent spots</h5>
             <ul>
               <% @spots.each do |spot| %>
-                <li><%= spot.number %> spotted in <%= spot.location %> on <%= spot.spot_date %></li>
+                <li>
+                  <%= link_to "#{spot.number} spotted in #{spot.location} on #{spot.spot_date}", user_spot_path(spot.user, spot) %>
+                </li>
               <% end %>
             </ul>
           </div>

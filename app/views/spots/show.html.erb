@@ -1,0 +1,83 @@
+      <div class="spot-container">
+
+        <div class="map-container">
+          <div id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>">
+        </div>
+
+        </div>
+
+        <div class="spot-content">
+
+          <div class="spot-user">
+            <div class="spot-user-pic">
+              <% if @user.avatar.attached? %>
+                <%= link_to cl_image_tag(@user.avatar.key), profile_path(@user) %>
+              <% else %>
+                <%= link_to image_tag "avatar_default.png", profile_path(@user) %>
+              <% end %>
+            </div>
+            <ul>
+              <li>
+                Spotted by:
+                <br>
+                <%= link_to @user.username, profile_path(@user) %>
+              </li>
+              <li>
+                Date:
+                <br>
+                <%= @spot.spot_date %>
+              </li>
+              <% if @spot.time != nil %>
+                <li>
+                  Time:
+                  <br>
+                  <%= @spot.time %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+
+          <div class="spot-info">
+            <h5>
+              <% if @spot.number == 1 %>
+                One <%= link_to @spot.bird.name.downcase, bird_path(@spot.bird_id) %> spotted in <%= @spot.location %>
+              <% else %>
+                <%= @spot.number %> <%= link_to "#{@spot.bird.name.downcase}s", bird_path(@spot.bird_id) %> spotted in <%= @spot.location %>
+              <% end %>
+            </h5>
+            <h6>
+              <%= @spot.bird.latin_name %>
+            </h6>
+            <p>
+              <%= @spot.note %>
+            </p>
+
+            <% if @spot.photos.attached? %>
+              <div class="spot-thumbs-container">
+                <% @spot.photos.each_with_index do |photo, index| %>
+                  <div class="spot-thumb">
+                    <%= link_to cl_image_tag(photo.key), "#", data: {toggle: "modal", target: "#spotPicModal#{index}"} %>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+
+        </div>
+
+        <% if @spot.photos.attached? %>
+            <% @spot.photos.each_with_index do |photo, index| %>
+              <div id=<%="spotPicModal#{index}"%> class="modal" aria-labelledby="spotPicModalLabel" aria-hidden="true">
+                <div class="spot-pic-content">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <%= cl_image_tag(photo.key) %>
+                </div>
+              </div>
+          <% end %>
+        <% end %>
+
+      </div>
+
+

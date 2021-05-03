@@ -110,13 +110,25 @@ locations = %w[Berlin Acapulco Toluca Cancun Quito Paris London Moscow Kyoto Van
   counter += 1
 end
 
+user = User.create(email: "marge@email.com", username: "Marge", password: "sdfjkl",
+                   bio: "Hello, I am Marge! I do not actually exist. Do you?")
+image = URI.open("https://res.cloudinary.com/diucx7fqo/image/upload/v1620026289/image_ikedfy.jpg")
+user.avatar.attach(io: image, filename: "marge", content_type: "image/png")
+user.save
+
 
 
 puts ""
-puts "::::::::::::::::::::: 🐣🐥 CREATE SPOTS 🦅🦉 :::::::::::::::::::::::"
+puts "::::::::::::::::::::: 🐧🐧 CREATE SPOTS 🔭🧔 :::::::::::::::::::::::"
 
 100.times do
-  Spot.create!(bird: Bird.all.sample, user: User.all.sample, spot_date: Date.today-rand(1000), location: locations.sample, number: rand(20) + 1)
+  spot = Spot.create(bird: Bird.all.sample, user: User.all.sample, spot_date: Date.today-rand(1000), location: locations.sample, number: rand(20) + 1)
+  if spot.number == 1
+    spot.note = "Spotted a beautiful #{spot.bird.name.downcase} early in the morning."
+  else
+    spot.note = "Spotted some beautiful #{spot.bird.name.downcase}s early in the morning."
+  end
+  spot.save
 end
 
 

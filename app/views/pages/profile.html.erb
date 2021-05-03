@@ -12,7 +12,7 @@
               <h6>Recent spots</h6>
               <ul>
                 <% @recent_spots.each do |spot| %>
-                  <li><%= spot.bird.name %> in <%= spot.location %></li>
+                  <li><%= link_to "#{spot.bird.name} in #{spot.location} on #{spot.spot_date}", user_spot_path(@user, spot) %></li>
                 <% end %>
               </ul>
             </div>
@@ -22,7 +22,7 @@
             <% if @user.avatar.attached? %>
               <%= cl_image_tag(@user.avatar.key) %>
             <% else %>
-                <%= image_tag "avatar_default_grey.png" %>
+                <%= image_tag "avatar_default.png" %>
             <% end %>
           </div>
 

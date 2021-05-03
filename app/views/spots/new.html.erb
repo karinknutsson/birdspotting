@@ -4,7 +4,7 @@
           <div class="form-inputs">
             <div class="label-input">
               Bird species:
-              <%= f.collection_select :bird_id, Bird.order(:name),:id,:name, include_blank: true,
+              <%= f.collection_select :bird_id, Bird.order(:name), :id, :name, include_blank: true,
                                       input_html: { class: "bird-box" } %>
               <br>
               Species not found? <%= link_to "Add new bird", new_bird_path %>
@@ -28,6 +28,17 @@
               <%= f.input :spot_date,
                           required: true,
                           label: false %>
+            </div>
+            <div class="label-input">
+              Notes:
+              <%= f.input :note,
+                          label: false,
+                          as: :text,
+                          input_html: { 'rows': 5, 'cols': 60, maxlength: 2000 } %>
+            </div>
+            <div class="label-input">
+              <%= f.input :photos,
+                          input_html: { multiple: true } %>
             </div>
           </div>
           <div class="form-actions">

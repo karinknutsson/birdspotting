@@ -1,12 +1,28 @@
 class SpotsController < ApplicationController
+  before_action :set_spot, only: %i[show edit update destroy]
   before_action :set_user
 
   def index
     @spots = Spot.all
+    authorize @spots
+
+    @map_spots = Spot.where.not(latitude: nil, longitude: nil)
+    @markers = @map_spots.map do |spot|
+      {
+        lng: spot.longitude,
+        lat: spot.latitude
+      }
+    end
   end
 
   def show
-    @spot = Spot.find(params[:id])
+    authorize @spot
+
+    @map_spot = @spot if !@spot.latitude.nil? && !@spot.longitude.nil?
+    @markers = [{
+      lng: @spot.longitude,
+      lat: @spot.latitude
+    }]
   end
 
   def new
@@ -26,27 +42,32 @@ class SpotsController < ApplicationController
   end
 
   def edit
-    @spot = Spot.find(params[:id])
+    authorize @spot
   end
 
   def update
-    @spot = Spot.find(params[:id])
+    authorize @spot
     @spot.update(spot_params)
     redirect_to root_path(@spot)
   end
 
   def destroy
-    @spot = Spot.find(params[:id])
+    authorize @spot
     @spot.destroy
     redirect_to root_path
   end
 
   private
+
+  def set_spot
+    @spot = Spot.find(params[:id])
+  end
+
   def set_user
     @user = User.find(params[:user_id])
   end
 
   def spot_params
-    params.require(:spot).permit(:spot_date, :time, :location, :number, :bird_id, :user_id)
+    params.require(:spot).permit(:spot_date, :time, :location, :number, :bird_id, :user_id, :note, photos: [])
   end
 end
