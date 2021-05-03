@@ -30,8 +30,8 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
-import { initMapbox } from '../src/init_mapbox';
+// import { initMapbox } from './map';
 
 document.addEventListener('turbolinks:load', () => {
-  initMapbox();
+  // initMapbox();
 });
