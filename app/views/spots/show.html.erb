@@ -1,10 +1,27 @@
       <div class="spot-container">
-        <div class="map-container">
-          <div id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>" >
 
-          </div>
+        <div class="spot-pic">
+            <% if @spot.photo.attached? %>
+              <%= cl_image_tag(@spot.photo.key) %>
+            <% end %>
         </div>
-          <h4><%= link_to @spot.bird.name, bird_path(@spot.bird_id) %></h4>
+
+        <div class="map-container">
+          <div id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>">
+        </div>
+
+        </div>
+          <h5>
+            <% if @spot.number == 1 %>
+              One <%= link_to @spot.bird.name.downcase, bird_path(@spot.bird_id) %> spotted on <%= @spot.spot_date %>
+            <% else %>
+              <%= @spot.number %> <%= link_to "#{@spot.bird.name.downcase}s", bird_path(@spot.bird_id) %> spotted on <%= @spot.spot_date %>
+            <% end %>
+          </h5>
           <h6><%= @spot.bird.latin_name %></h6>
+
+          <p>
+            <%= @spot.note %>
+          </p>
 
       </div>

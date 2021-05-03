@@ -124,10 +124,11 @@ puts "::::::::::::::::::::: 🐧🐧 CREATE SPOTS 🔭🧔 :::::::::::::::::::::
 100.times do
   spot = Spot.create(bird: Bird.all.sample, user: User.all.sample, spot_date: Date.today-rand(1000), location: locations.sample, number: rand(20) + 1)
   if spot.number == 1
-    spot.note = "Spotted a beautiful #{spot.bird.name} early in the morning."
+    spot.note = "Spotted a beautiful #{spot.bird.name.downcase} early in the morning."
   else
-    spot.note = "Spotted some beautiful #{spot.bird.name}s early in the morning."
+    spot.note = "Spotted some beautiful #{spot.bird.name.downcase}s early in the morning."
   end
+  spot.save
 end
 
 
