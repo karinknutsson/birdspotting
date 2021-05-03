@@ -36,6 +36,10 @@
                           as: :text,
                           input_html: { 'rows': 5, 'cols': 60, maxlength: 2000 } %>
             </div>
+            <div class="label-input">
+              <%= f.input :photos,
+                          input_html: { multiple: true } %>
+            </div>
           </div>
           <div class="form-actions">
             <%= f.button :submit, "Submit", class: "btn-submit btn-red btn-fill" %>

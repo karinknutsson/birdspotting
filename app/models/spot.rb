@@ -2,7 +2,7 @@ class Spot < ApplicationRecord
   belongs_to :bird
   belongs_to :user
 
-  has_one_attached :photo
+  has_many_attached :photos, dependent: :destroy
 
   validates :bird_id, presence: true
   validates :number, presence: true
