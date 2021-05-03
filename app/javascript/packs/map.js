@@ -32,5 +32,3 @@ if (mapElement) {
 
   map.addControl(new mapboxgl.NavigationControl());
 }
-
-
