@@ -13,6 +13,14 @@ class BirdPolicy < ApplicationPolicy
     true
   end
 
+  def create?
+    true
+  end
+
+  def new?
+    create?
+  end
+
   def daily?
     true
   end

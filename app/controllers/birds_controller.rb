@@ -1,3 +1,8 @@
+require 'open-uri'
+require 'nokogiri'
+
+require 'pry-byebug'
+
 class BirdsController < ApplicationController
   def index
     @birds = Bird.all
@@ -14,7 +19,9 @@ class BirdsController < ApplicationController
   end
 
   def create
+
     @bird = Bird.new(bird_params)
+    binding.pry
     authorize @bird
     if @bird.save
       redirect_to root_path
@@ -55,11 +62,16 @@ class BirdsController < ApplicationController
     params.require(:bird).permit(:name, :latin_name, :image, :description)
   end
 
-  def make_name_wiki(bird_name)
+  def capitalize_name(bird_name)
     parts = bird_name.split(' ')
     parts_down = parts.map &:downcase
     parts_down[0].capitalize!
-    parts_down.join('_').gsub(/'/, '%27')
+    parts_down.join(' ')
+  end
+
+  def make_name_wiki(bird_name)
+    wiki_name = bird_name.gsub(/ /, '_')
+    wiki_name.gsub(/'/, '%27')
   end
 
   def get_content(wiki_name)
