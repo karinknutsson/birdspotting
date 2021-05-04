@@ -19,9 +19,16 @@ class BirdsController < ApplicationController
   end
 
   def create
-
     @bird = Bird.new(bird_params)
-    binding.pry
+    @bird.name = capitalize_name(@bird.name)
+    @bird.wiki_name = make_name_wiki(@bird.name)
+    doc = get_content(@bird.wiki_name)
+    @bird.latin_name = get_latin_name(doc)
+    redirect_to root_path if @bird.latin_name.nil?
+
+    wiki_children = get_children(doc)
+    @bird.description = get_info(wiki_children, @bird.latin_name)
+
     authorize @bird
     if @bird.save
       redirect_to root_path
@@ -59,7 +66,7 @@ class BirdsController < ApplicationController
   private
 
   def bird_params
-    params.require(:bird).permit(:name, :latin_name, :image, :description)
+    params.require(:bird).permit(:name, :latin_name, :image, :wiki_name, :description)
   end
 
   def capitalize_name(bird_name)
@@ -114,16 +121,5 @@ class BirdsController < ApplicationController
 
     info.gsub!(/\[\d\]/, '')
     info.gsub(" (#{latin_name})", '')
-  end
-
-  def scrape_bird(bird)
-    wiki_name = make_name_wiki(bird)
-    doc = get_content(wiki_name)
-    latin_name = get_latin_name(doc)
-    return nil if latin_name.nil?
-
-    wiki_children = get_children(doc)
-    info = get_info(wiki_children, latin_name)
-    [latin_name, info]
   end
 end
