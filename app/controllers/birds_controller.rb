@@ -47,8 +47,6 @@ class BirdsController < ApplicationController
     authorize @bird
     @spots = Spot.where(bird: @bird).order(spot_date: :desc).limit(5)
     authorize @spots
-    # @spots = @spots.sort_by &:spot_date
-
   end
 
   private
@@ -110,7 +108,9 @@ class BirdsController < ApplicationController
     wiki_name = make_name_wiki(bird)
     doc = get_content(wiki_name)
     latin_name = get_latin_name(doc)
-    wiki_children = get_children(doc)
-    info = get_info(wiki_children, latin_name)
+    if !latin_name.nil?
+      wiki_children = get_children(doc)
+      info = get_info(wiki_children, latin_name)
+    end
   end
 end
