@@ -17,8 +17,12 @@
           </div>
         </div>
         <div class="daily-img-container">
-          <%= cl_image_tag(@bird.image.key) %>
-          <p><%= @bird.credit %></p>
+          <% if @bird.image.attached? %>
+            <%= cl_image_tag(@bird.image.key) %>
+            <p><%= @bird.credit %></p>
+          <% else %>
+            <%= image_tag "avatar_default.png" %>
+          <% end %>
         </div>
 
       </div>
