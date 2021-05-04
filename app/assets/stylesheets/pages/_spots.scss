@@ -14,6 +14,7 @@
   background: $a-white;
   border-radius: 16px;
   display: flex;
+  align-items: flex-start;
   justify-content: space-between;
 }
 
@@ -50,6 +51,7 @@
   p {
     margin-top: 16px;
     font-size: 0.9rem;
+    line-height: 1.8rem;
   }
 }
 

@@ -18,7 +18,7 @@ if (mapElement) {
   });
 
   if (markers.length === 0) {
-    map.setZoom(0);
+    map.setZoom(0.000001);
   } else if (markers.length === 1) {
     map.setZoom(12);
     map.setCenter([markers[0].lng, markers[0].lat]);

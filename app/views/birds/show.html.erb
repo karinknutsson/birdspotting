@@ -1,7 +1,26 @@
       <div class="bird-container">
         <div class="map-container">
-          <div id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>">
+          <div id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"></div>
         </div>
 
-        <h4><%= @bird.name %></h4>
+        <div class="bird-content">
+          <div class="bird-img">
+            <% if @bird.image.attached? %>
+              <%= cl_image_tag(@bird.image.key) %>
+              <p><%= @bird.credit %></p>
+            <% else %>
+              <%= image_tag "avatar_default.png" %>
+            <% end %>
+          </div>
+
+          <div class="bird-info">
+            <h5><%= @bird.name %></h5>
+            <h6>
+              <%= @bird.latin_name %>
+            </h6>
+            <p>
+              <%= @bird.description %>
+            </p>
+          </div>
+        </div>
       </div>
