@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   end
 
   get 'daily', to: 'birds#daily', as: :daily_bird
+  get 'not_found', to: 'birds#not_found', as: :not_found
 
   get '/profile/:id', to: 'pages#profile', as: 'profile'
   get 'settings', to: 'pages#settings', as: 'settings'

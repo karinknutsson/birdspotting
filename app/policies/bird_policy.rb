@@ -24,4 +24,8 @@ class BirdPolicy < ApplicationPolicy
   def daily?
     true
   end
+
+  def not_found?
+    true
+  end
 end

@@ -4,12 +4,13 @@ require 'nokogiri'
 require 'pry-byebug'
 
 class BirdsController < ApplicationController
+  before_action :set_bird, only: %i[show edit update destroy]
+
   def index
     @birds = Bird.all
   end
 
   def show
-    @bird = Bird.find(params[:id])
     authorize @bird
   end
 
@@ -20,38 +21,37 @@ class BirdsController < ApplicationController
 
   def create
     @bird = Bird.new(bird_params)
+    authorize @bird
     @bird.name = capitalize_name(@bird.name)
     @bird.wiki_name = make_name_wiki(@bird.name)
     doc = get_content(@bird.wiki_name)
     @bird.latin_name = get_latin_name(doc)
-    redirect_to root_path if @bird.latin_name.nil?
 
-    wiki_children = get_children(doc)
-    @bird.description = get_info(wiki_children, @bird.latin_name)
-
-    authorize @bird
-    if @bird.save
-      redirect_to root_path
+    if @bird.latin_name.nil?
+      redirect_to not_found_path
     else
-      render :new
+      wiki_children = get_children(doc)
+      @bird.description = get_info(wiki_children, @bird.latin_name)
+      if @bird.save
+        redirect_to root_path
+      else
+        render :new
+      end
     end
   end
 
   def edit
-    @bird = Bird.find(params[:id])
     authorize @bird
   end
 
   def update
     authorize @bird
-    @bird = Bird.find(params[:id])
     @bird.update(bird_params)
     redirect_to bird_path(@bird)
   end
 
   def destroy
     authorize @bird
-    @bird = Bird.find(params[:id])
     @bird.destroy
     redirect_to birds_path
   end
@@ -63,7 +63,16 @@ class BirdsController < ApplicationController
     authorize @spots
   end
 
+  def not_found
+    @bird = Bird.new
+    authorize @bird
+  end
+
   private
+
+  def set_bird
+    @bird = Bird.find(params[:id])
+  end
 
   def bird_params
     params.require(:bird).permit(:name, :latin_name, :image, :wiki_name, :description)
@@ -87,7 +96,10 @@ class BirdsController < ApplicationController
   end
 
   def get_latin_name(doc)
-    doc.search('.infobox').at_css('span.binomial').text.strip
+    return nil if doc.nil?
+    return doc.search('.infobox').at_css('span.binomial').text.strip if doc.search('.infobox').at_css('span.binomial')
+
+    nil
   end
 
   def get_children(doc)
