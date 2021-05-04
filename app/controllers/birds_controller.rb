@@ -79,8 +79,9 @@ class BirdsController < ApplicationController
   def get_info(wiki_children, latin_name)
     first_n = []
     i = 3
-    while i < 20 do
+    while i < 20
       break if wiki_children[i].attributes["id"] && wiki_children[i].attributes["id"].content == "toc"
+
       first_n << wiki_children[i]
       i += 1
     end
@@ -88,17 +89,16 @@ class BirdsController < ApplicationController
     first_n.reverse!
     paragraphs = []
     j = 0
-    while j < first_n.length do
+    while j < first_n.length
       break if first_n[j].attributes["class"] && first_n[j].attributes["class"].content == "infobox biota"
+
       paragraphs << first_n[j]
       j += 1
     end
 
     paragraphs.reverse!
     info = ""
-    paragraphs.each do |p|
-      info += p.text.strip
-    end
+    paragraphs.each { |p| info += p.text.strip }
 
     info.gsub!(/\[\d\]/, '')
     info.gsub(" (#{latin_name})", '')
@@ -108,9 +108,10 @@ class BirdsController < ApplicationController
     wiki_name = make_name_wiki(bird)
     doc = get_content(wiki_name)
     latin_name = get_latin_name(doc)
-    if !latin_name.nil?
-      wiki_children = get_children(doc)
-      info = get_info(wiki_children, latin_name)
-    end
+    return nil if latin_name.nil?
+
+    wiki_children = get_children(doc)
+    info = get_info(wiki_children, latin_name)
+    [latin_name, info]
   end
 end
