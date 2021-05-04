@@ -20,8 +20,8 @@ class SpotsController < ApplicationController
 
     @map_spot = @spot if !@spot.latitude.nil? && !@spot.longitude.nil?
     @markers = [{
-      lng: @spot.longitude,
-      lat: @spot.latitude
+      lng: @map_spot.longitude,
+      lat: @map_spot.latitude
     }]
   end
 
