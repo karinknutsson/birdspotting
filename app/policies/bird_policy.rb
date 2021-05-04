@@ -25,6 +25,10 @@ class BirdPolicy < ApplicationPolicy
     true
   end
 
+  def found?
+    true
+  end
+
   def not_found?
     true
   end

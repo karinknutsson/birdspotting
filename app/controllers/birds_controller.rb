@@ -1,8 +1,6 @@
 require 'open-uri'
 require 'nokogiri'
 
-require 'pry-byebug'
-
 class BirdsController < ApplicationController
   before_action :set_bird, only: %i[show edit update destroy]
 
@@ -23,19 +21,24 @@ class BirdsController < ApplicationController
     @bird = Bird.new(bird_params)
     authorize @bird
     @bird.name = capitalize_name(@bird.name)
-    @bird.wiki_name = make_name_wiki(@bird.name)
-    doc = get_content(@bird.wiki_name)
-    @bird.latin_name = get_latin_name(doc)
 
-    if @bird.latin_name.nil?
-      redirect_to not_found_path
+    if Bird.all.find_by(name: @bird.name)
+      redirect_to found_path
     else
-      wiki_children = get_children(doc)
-      @bird.description = get_info(wiki_children, @bird.latin_name)
-      if @bird.save
-        redirect_to root_path
+      @bird.wiki_name = make_name_wiki(@bird.name)
+      doc = get_content(@bird.wiki_name)
+      @bird.latin_name = get_latin_name(doc)
+
+      if @bird.latin_name.nil?
+        redirect_to not_found_path
       else
-        render :new
+        wiki_children = get_children(doc)
+        @bird.description = get_info(wiki_children, @bird.latin_name)
+        if @bird.save
+          redirect_to root_path
+        else
+          render :new
+        end
       end
     end
   end
@@ -61,6 +64,11 @@ class BirdsController < ApplicationController
     authorize @bird
     @spots = Spot.where(bird: @bird).order(spot_date: :desc).limit(5)
     authorize @spots
+  end
+
+  def found
+    @bird = Bird.new
+    authorize @bird
   end
 
   def not_found

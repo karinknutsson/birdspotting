@@ -1,0 +1,12 @@
+      <div class="no-bird-container">
+        <h4>
+          Bird already exists
+        </h4>
+        <p>
+          The bird species can already be found in the database. To easily find the bird, select the dropdown menu and type the bird's name while the menu is selected.
+        </p>
+
+        <div class="top-margin centered">
+          <%= button_to "New spot", new_user_spot_path(current_user), method: :get, class: "btn-submit btn-red btn-fill" %>
+        </div>
+      </div>
