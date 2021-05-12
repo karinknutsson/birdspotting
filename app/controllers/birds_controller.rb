@@ -10,6 +10,14 @@ class BirdsController < ApplicationController
 
   def show
     authorize @bird
+
+    @map_spots = Spot.where(bird: @bird).where.not(latitude: nil, longitude: nil)
+    @markers = @map_spots.map do |spot|
+      {
+        lng: spot.longitude,
+        lat: spot.latitude
+      }
+    end
   end
 
   def new
