@@ -1,6 +1,19 @@
+ul.three-cols {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+}
+
+ul.three-cols li {
+
+}
+
 .bird-container {
   margin: 5vw auto 10vw auto;
   width: 70vw;
+  h5 {
+    font-size: 0.8rem;
+  }
 }
 
 .bird-content {
@@ -69,3 +82,8 @@
     line-height: 1.8rem;
   }
 }
+
+.source {
+  font-size: 0.8rem;
+}
+

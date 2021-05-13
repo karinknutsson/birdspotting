@@ -5,7 +5,7 @@ class BirdsController < ApplicationController
   before_action :set_bird, only: %i[show edit update destroy]
 
   def index
-    @birds = Bird.all
+    @birds = Bird.all.order(name: :asc)
     policy_scope @birds
   end
 
@@ -19,6 +19,8 @@ class BirdsController < ApplicationController
         lat: spot.latitude
       }
     end
+
+    @bird_url = "https://en.wikipedia.org/wiki/#{@bird.wiki_name}"
   end
 
   def new
@@ -71,7 +73,7 @@ class BirdsController < ApplicationController
   def daily
     @bird = Bird.all.sample
     authorize @bird
-    @spots = Spot.where(bird: @bird).order(spot_date: :desc).limit(5)
+    @spots = Spot.where(bird: @bird).order(spot_date: :desc).limit(10)
     authorize @spots
   end
 
