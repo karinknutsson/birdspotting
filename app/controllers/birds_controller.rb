@@ -6,6 +6,7 @@ class BirdsController < ApplicationController
 
   def index
     @birds = Bird.all
+    policy_scope @birds
   end
 
   def show
