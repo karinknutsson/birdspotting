@@ -7,6 +7,7 @@
               <%= f.collection_select :bird_id, Bird.order(:name), :id, :name, include_blank: true,
                                       input_html: { class: "bird-box" } %>
               <br>
+              <%= link_to "All birds", birds_path %>
               Species not found? <%= link_to "Add new bird", new_bird_path %>
             </div>
             <div class="label-input">

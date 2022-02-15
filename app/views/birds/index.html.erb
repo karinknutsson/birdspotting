@@ -1,0 +1,11 @@
+      <div class="bird-container">
+
+        <ul class="bird-list">
+          <% @birds.each do |bird| %>
+            <li>
+              <h5><%= link_to bird.name, bird_path(bird) %></h5>
+            </li>
+          <% end %>
+        </ul>
+
+      </div>

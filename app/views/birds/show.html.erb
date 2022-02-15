@@ -18,8 +18,13 @@
             <%= @bird.description %>
           </p>
 
+          <div class="source">
+            Source: <a href="<%= @bird_url %>" target="_blank">Wikipedia</a>
+          </div>
+
           <div class="birdmap-container">
             <div id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"></div>
           </div>
         </div>
+
       </div>

@@ -16,40 +16,53 @@ User.destroy_all
 puts ""
 puts "::::::::::::::::::::: 🐣🐥 CREATE BIRDS 🦅🦉 ::::::::::::::::::::::"
 
-magpie = Bird.create(name: "Eurasian magpie", latin_name: "Pica pica", wiki_name: "Eurasian_magpie", credit: "By Pierre-Selim - Flickr: Pica pica, CC BY-SA 2.0,\nhttps://commons.wikimedia.org/w/index.php?curid=19400996",
+magpie = Bird.create(name: "Eurasian magpie", latin_name: "Pica pica", wiki_name: "Eurasian_magpie",
+                     credit: "By Pierre-Selim - Flickr: Pica pica, CC BY-SA 2.0,\nhttps://commons.wikimedia.org/w/index.php?curid=19400996",
                      description: "The Eurasian magpie or common magpie (Pica pica) is a resident breeding bird throughout the northern part of the Eurasian continent. It is one of several birds in the crow family designated magpies, and belongs to the Holarctic radiation of \"monochrome\" magpies. In Europe, \"magpie\" is used by English speakers as a synonym for the Eurasian magpie: the only other magpie in Europe is the Iberian magpie (Cyanopica cooki), which is limited to the Iberian Peninsula.\n\nThe Eurasian magpie is one of the most intelligent birds, and it is believed to be one of the most intelligent of all non-human animals. The expansion of its nidopallium is approximately the same in its relative size as the brain of chimpanzees, gorillas, orangutans and humans. It is the only bird known to pass the mirror test, along with very few other non-avian species."
                     )
 image = URI.open("https://res.cloudinary.com/diucx7fqo/image/upload/v1619608440/Pica_pica_-_Compans_Caffarelli_-_2012-03-16_yij00c.jpg")
 magpie.image.attach(io: image, filename: "magpie", content_type: "image/png")
 magpie.save
 
-turkey_vulture = Bird.create(name: "Turkey vulture", latin_name: "Cathartes aura", wiki_name: "Turkey_vulture", credit: "By Don DeBold from San Jose, CA, USA - Vulture Landing on Dead Tree BranchUploaded by Snowmanradio, CC BY 2.0,\nhttps://commons.wikimedia.org/w/index.php?curid=10572376",
+turkey_vulture = Bird.create(name: "Turkey vulture", latin_name: "Cathartes aura", wiki_name: "Turkey_vulture",
+                             credit: "By Don DeBold from San Jose, CA, USA - Vulture Landing on Dead Tree BranchUploaded by Snowmanradio, CC BY 2.0,\nhttps://commons.wikimedia.org/w/index.php?curid=10572376",
                              description: "The turkey vulture (Cathartes aura), also known in some North American regions as the turkey buzzard (or just buzzard), and in some areas of the Caribbean as the John crow or carrion crow, is the most widespread of the New World vultures. One of three species in the genus Cathartes of the family Cathartidae, the turkey vulture ranges from southern Canada to the southernmost tip of South America. It inhabits a variety of open and semi-open areas, including subtropical forests, shrublands, pastures, and deserts.\n\nLike all New World vultures, it is not closely related to the Old World vultures of Europe, Africa, and Asia. The two groups strongly resemble each other because of convergent evolution; natural selection often leads to similar body plans in animals that adapt independently to the same conditions.\n\nThe turkey vulture is a scavenger and feeds almost exclusively on carrion. It finds its food using its keen eyes and sense of smell, flying low enough to detect the gasses produced by the beginnings of the process of decay in dead animals. In flight, it uses thermals to move through the air, flapping its wings infrequently. It roosts in large community groups. Lacking a syrinx—the vocal organ of birds—its only vocalizations are grunts or low hisses. It nests in caves, hollow trees, or thickets. Each year it generally raises two chicks, which it feeds by regurgitation. It has very few natural predators. In the United States, the vulture receives legal protection under the Migratory Bird Treaty Act of 1918."
                             )
 image = URI.open("https://res.cloudinary.com/diucx7fqo/image/upload/v1619608966/Cathartes_aura_-Santa_Teresa_County_Park__San_Jose__California__USA_-adult-8a_jqklu1.jpg")
 turkey_vulture.image.attach(io: image, filename: "turkey_vulture", content_type: "image/png")
 turkey_vulture.save
 
-blue_tit = Bird.create(name: "Eurasian blue tit", latin_name: "Cyanistes caeruleus", credit: "By © Francis C. Franklin / CC-BY-SA-3.0, CC BY-SA 3.0,\nhttps://commons.wikimedia.org/w/index.php?curid=37675470",
+blue_tit = Bird.create(name: "Eurasian blue tit", latin_name: "Cyanistes caeruleus", wiki_name: "Eurasian_blue_tit"
+                       credit: "By © Francis C. Franklin / CC-BY-SA-3.0, CC BY-SA 3.0,\nhttps://commons.wikimedia.org/w/index.php?curid=37675470",
                        description: "The Eurasian blue tit (Cyanistes caeruleus) is a small passerine bird in the tit family, Paridae. It is easily recognisable by its blue and yellow plumage and small size.\n\nEurasian blue tits, usually resident and non-migratory birds, are widespread and a common resident breeder throughout temperate and subarctic Europe and the western Palearctic in deciduous or mixed woodlands with a high proportion of oak. They usually nest in tree holes, although they easily adapt to nest boxes where necessary. Their main rival for nests and in the search for food is the larger and more common great tit.\n\nThe Eurasian blue tit prefers insects and spiders for its diet. Outside the breeding season, they also eat seeds and other vegetable-based foods. The birds are famed for their acrobatic skills, as they can cling to the outermost branches and hang upside down when looking for food."
                       )
 image = URI.open("https://res.cloudinary.com/diucx7fqo/image/upload/v1619609245/Eurasian_blue_tit_Lancashire_vutuk9.jpg")
 blue_tit.image.attach(io: image, filename: "blue_tit", content_type: "image/png")
 blue_tit.save
 
-wilson_storm_petrel = Bird.create(name: "Wilson's storm petrel", latin_name: "Oceanites oceanicus", credit: "By JJ Harrison (https://www.jjharrison.com.au/) - Own work, CC BY-SA 3.0,\nhttps://commons.wikimedia.org/w/index.php?curid=18808505",
+wilson_storm_petrel = Bird.create(name: "Wilson's storm petrel", latin_name: "Oceanites oceanicus", wiki_name: "Wilson%27s_storm_petrel",
+                                  credit: "By JJ Harrison (https://www.jjharrison.com.au/) - Own work, CC BY-SA 3.0,\nhttps://commons.wikimedia.org/w/index.php?curid=18808505",
                                   description: "Wilson's storm petrel (Oceanites oceanicus), also known as Wilson's petrel, is a small seabird of the austral storm petrel family Oceanitidae. It is one of the most abundant bird species in the world and has a circumpolar distribution mainly in the seas of the southern hemisphere but extending northwards during the summer of the northern hemisphere. The world population has been estimated to be more than 50 million pairs. The name commemorates the Scottish-American ornithologist Alexander Wilson. The genus name Oceanites refers to the mythical Oceanids, the three thousand daughters of Tethys. The species name is from Latin oceanus, \"ocean\"."
                                  )
 image = URI.open("https://res.cloudinary.com/diucx7fqo/image/upload/v1619609588/Oceanites_oceanicus_-_SE_Tasmania_ftojvf.jpg")
 wilson_storm_petrel.image.attach(io: image, filename: "wilson_storm_petrel", content_type: "image/png")
 wilson_storm_petrel.save
 
-egyptian_vulture = Bird.create(name: "Egyptian vulture", latin_name: "Neophron percnopterus", credit: "By Carlos Delgado, CC BY-SA 3.0,\nhttps://commons.wikimedia.org/w/index.php?curid=25495449",
-                     description: "The Egyptian vulture (Neophron percnopterus), also called the white scavenger vulture or pharaoh's chicken, is a small Old World vulture and the only member of the genus Neophron. It is widely distributed from the Iberian Peninsula and North Africa to India. The contrasting underwing pattern and wedge-shaped tail make it distinctive in flight as it soars in thermals during the warmer parts of the day. Egyptian vultures feed mainly on carrion but are opportunistic and will prey on small mammals, birds, and reptiles. They also feed on the eggs of other birds, breaking larger ones by tossing a large pebble onto them.\n\nThe use of tools is rare in birds and apart from the use of a pebble as a hammer, Egyptian vultures also use twigs to roll up wool for use in their nest. Egyptian vultures that breed in the temperate regions migrate south in winter while tropical populations are relatively sedentary. Populations of this species declined in the 20th century and some island populations are endangered by hunting, accidental poisoning, and collision with power lines."
-                     )
+egyptian_vulture = Bird.create(name: "Egyptian vulture", latin_name: "Neophron percnopterus", wiki_name: "Egyptian_vulture",
+                               credit: "By Carlos Delgado, CC BY-SA 3.0,\nhttps://commons.wikimedia.org/w/index.php?curid=25495449",
+                               description: "The Egyptian vulture (Neophron percnopterus), also called the white scavenger vulture or pharaoh's chicken, is a small Old World vulture and the only member of the genus Neophron. It is widely distributed from the Iberian Peninsula and North Africa to India. The contrasting underwing pattern and wedge-shaped tail make it distinctive in flight as it soars in thermals during the warmer parts of the day. Egyptian vultures feed mainly on carrion but are opportunistic and will prey on small mammals, birds, and reptiles. They also feed on the eggs of other birds, breaking larger ones by tossing a large pebble onto them.\n\nThe use of tools is rare in birds and apart from the use of a pebble as a hammer, Egyptian vultures also use twigs to roll up wool for use in their nest. Egyptian vultures that breed in the temperate regions migrate south in winter while tropical populations are relatively sedentary. Populations of this species declined in the 20th century and some island populations are endangered by hunting, accidental poisoning, and collision with power lines."
+                              )
 image = URI.open("https://res.cloudinary.com/diucx7fqo/image/upload/v1619608996/Neophron_percnopterus_-_01_uaexsw.jpg")
 egyptian_vulture.image.attach(io: image, filename: "egyptian_vulture", content_type: "image/png")
 egyptian_vulture.save
+
+american_crow = Bird.create(name: "American crow", latin_name: "Corvus brachyrhynchos", wiki_name: "American_crow",
+                            credit: "CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=2310490",
+                            description: "The American crow is a large passerine bird species of the family Corvidae. It is a common bird found throughout much of North America. American crows are the New World counterpart to the carrion crow and the hooded crow. Although the American crow and the hooded crow are very similar in size, structure and behavior, their calls are different. The American crow, nevertheless, occupies the same role that the hooded crow does in Eurasia.From beak to tail, an American crow measures 40–50 cm (16–20 in), almost half of which is tail. Mass varies from about 300 to 600 g (11 to 21 oz). Males tend to be larger than females. The most usual call is CaaW!-CaaW!-CaaW!.The American crow is all black, with iridescent feathers. It looks much like other all-black corvids. They can be distinguished from the common raven (C. corax) because American crows are smaller, from the fish crow (C. ossifragus) because American crows do not hunch and fluff their throat feathers when they call and from the carrion crow (C. corone) by size, as the carrion crow is larger and of a stockier build.American crows are common, widespread, and susceptible to the West Nile virus, making them useful as a bioindicator to track the virus's spread. Direct transmission of the virus from crows to humans is impossible."
+                           )
+image = URI.open("https://res.cloudinary.com/diucx7fqo/image/upload/v1619608996/Neophron_percnopterus_-_01_uaexsw.jpg")
+american_crow.image.attach(io: image, filename: "american_crow", content_type: "image/png")
+american_crow.save
 
 
 
@@ -111,7 +124,7 @@ locations = %w[Berlin Acapulco Toluca Cancun Quito Paris London Moscow Kyoto Van
 end
 
 user = User.create(email: "marge@email.com", username: "Marge", password: "sdfjkl",
-                   bio: "Hello, I am Marge! I do not actually exist. Do you?")
+                   bio: "Hello! I am Marge and I do not actually exist. Do you?")
 image = URI.open("https://res.cloudinary.com/diucx7fqo/image/upload/v1620026289/image_ikedfy.jpg")
 user.avatar.attach(io: image, filename: "marge", content_type: "image/png")
 user.save

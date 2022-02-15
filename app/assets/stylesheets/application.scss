@@ -19,6 +19,10 @@ html, body {
 
 body {
   font-weight: 600;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 textarea:focus, input:focus {
@@ -86,6 +90,7 @@ ul {
 .main-container {
   margin: 2vw auto;
   width: 75vw;
+  flex-grow: 1;
 }
 
 .map-container {
