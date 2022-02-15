@@ -1,16 +1,13 @@
-ul.three-cols {
-  -webkit-column-count: 3;
-  -moz-column-count: 3;
-  column-count: 3;
-}
-
-ul.three-cols li {
-
+ul.bird-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 30vh;
 }
 
 .bird-container {
   margin: 5vw auto 10vw auto;
-  width: 70vw;
+  width: 50vw;
   h5 {
     font-size: 0.8rem;
   }

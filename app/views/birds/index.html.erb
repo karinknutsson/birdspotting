@@ -1,8 +1,8 @@
       <div class="bird-container">
 
-        <ul class="three-cols">
+        <ul class="bird-list">
           <% @birds.each do |bird| %>
-            <li class="three-cols">
+            <li>
               <h5><%= link_to bird.name, bird_path(bird) %></h5>
             </li>
           <% end %>
