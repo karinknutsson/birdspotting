@@ -1,6 +1,6 @@
       <div class="nav-birds">
 
-        <h2 class="navbar"><%= link_to "Spot the Bird", daily_bird_path %></h2>
+        <%= render "shared/logo-navbar" %>
 
         <div class="nav-links">
           <%= button_to "Birds", birds_path, method: :get, class: "nav-btn" %>
