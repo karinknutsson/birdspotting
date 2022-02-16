@@ -23,6 +23,8 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: rgb(255,223,151);
+  background: linear-gradient(326deg, rgba(255,223,151,1) 0%, rgba(254,254,224,1) 100%);
 }
 
 textarea:focus, input:focus {
@@ -99,11 +101,6 @@ ul {
   height: 320px;
   background: $a-white;
   border-radius: 16px;
-}
-
-.logo-navbar-container {
-  width: 256px;
-  height: 27;
 }
 
 #map {
