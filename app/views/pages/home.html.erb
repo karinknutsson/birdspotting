@@ -2,19 +2,6 @@
     <% controller.redirect_to daily_bird_path %>
 <% else %>
 
-<div class="row">
-    <div class="col-0 col-sm-1 col-md-2"></div>
-    <div class="col-12 col-sm-6 col-md-3">
-        <div class="home-logo">
-            <%= render "shared/logo" %>
-        </div>
-    </div>
-    <div class="col-0 col-sm-5 col-md-7"></div>
-</div>
-<div class="row">
-    <div class="col-0 col-sm-1 col-md-2"></div>
-    <div class="col-0 col-sm-10 col-md-8">
-        <div class="home-border-container center-flex">
             <div class="home-container">
                 <h1 class="home">A community for bird lovers.</h1>
 
@@ -24,17 +11,9 @@
                 </p>
 
                 <div class="home-buttons center-flex">
-                    <%= button_to "Log in", new_user_session_path, method: :get, class: "btn-bird btn-mag-outline btn-round btn-home"%>
+                    <%= button_to "Log in", new_user_session_path, method: :get, class: "btn-bird btn-mag-outline btn-round btn-round"%>
                     <%= button_to "Sign up", new_user_registration_path, method: :get, class: "btn-bird btn-mag btn-round btn-home"%>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="col-0 col-sm-1 col-md-2"></div>
-</div>
-
-
-
-
 
 <% end %>

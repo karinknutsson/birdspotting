@@ -2,22 +2,21 @@
   flex-grow: 0;
   height: 80px;
   width: 100%;
-  color: $cream;
-  font-weight: 700;
-  font-size: 0.7rem;
-  letter-spacing: 0.01rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-weight: bold;
+  font-size: 11pt;
   ul {
     margin: 0;
   }
   li {
-    margin: 0 16px;
+    margin: 0 32px;
     display: inline;
   }
   a, a:visited {
-    color: $cream;
+    color: white;
+    text-decoration: none;
+  }
+  a:hover, a:active {
+    color: $pink-magenta;
     text-decoration: none;
   }
 }

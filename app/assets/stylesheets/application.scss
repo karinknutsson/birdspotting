@@ -62,12 +62,12 @@ h5, h6 {
 }
 
 a {
-  color: $soft-red;
+  color: $magenta;
   text-decoration: none;
 }
 
 a:hover, a:active {
-  color: $red-sand;
+  color: $pink-magenta;
   text-decoration: none;
 }
 
@@ -77,7 +77,8 @@ ul {
 }
 
 p {
-  font-size: 16px;
+  font-size: 12pt;
+  line-height: 20pt;
 }
 
 .centered {

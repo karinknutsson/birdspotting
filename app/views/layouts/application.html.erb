@@ -15,19 +15,41 @@
 
     <%= render 'shared/navbar' if user_signed_in? %>
 
+    <% if !user_signed_in? %>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-0 col-sm-1 col-md-2"></div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="home-logo">
+                        <%= render "shared/logo" %>
+                    </div>
+                </div>
+                <div class="col-0 col-sm-5 col-md-7"></div>
+            </div>
+        </div>
+    <% end %>
+
     <div class="container-fluid">
-      <%= yield %>
+        <div class="row">
+            <div class="col-0 col-sm-1 col-md-2"></div>
+            <div class="col-0 col-sm-10 col-md-8">
+                <div class="home-border-container center-flex">
+                    <%= yield %>
+                </div>
+            </div>
+            <div class="col-0 col-sm-1 col-md-2"></div>
+        </div>
     </div>
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
 
-    <div class="footer">
+    <div class="footer center-flex">
       <ul>
-        <li>ABOUT</li>
-        <li>DATA POLICY</li>
-        <li>GET INVOLVED</li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">DATA POLICY</a></li>
+        <li><a href="#">GET INVOLVED</a></li>
       </ul>
     </div>
 
