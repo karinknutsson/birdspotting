@@ -18,13 +18,18 @@ html, body {
 }
 
 body {
-  font-weight: 600;
+  font-weight: 400;
   width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: rgb(255,223,151);
-  background: linear-gradient(326deg, rgba(255,223,151,1) 0%, rgba(254,254,224,1) 100%);
+  background: $pistachio;
+
+  /* ---  FOREST PHOTO BY PIXABAY  --- */
+  /*  https://www.pexels.com/@pixabay  */
+  background-image: url('pexels-pixabay.jpg');
+  background-position: center;
+  background-size: cover;
 }
 
 textarea:focus, input:focus {
@@ -32,12 +37,6 @@ textarea:focus, input:focus {
   border-color: inherit !important;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
-}
-
-h1.home {
-  font-weight: 900;
-  font-size: 8vw;
-  letter-spacing: 0.3vw;
 }
 
 h2 {
@@ -77,6 +76,10 @@ ul {
   list-style-type: none;
 }
 
+p {
+  font-size: 16px;
+}
+
 .centered {
   text-align: center;
 }
@@ -107,4 +110,10 @@ ul {
   width: 100%;
   height: 100%;
   border-radius: 2px;
+}
+
+.center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

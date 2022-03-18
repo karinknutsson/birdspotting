@@ -1,20 +1,40 @@
-    <% if user_signed_in? %>
+<% if user_signed_in? %>
+    <% controller.redirect_to daily_bird_path %>
+<% else %>
 
-      <% controller.redirect_to daily_bird_path %>
+<div class="row">
+    <div class="col-0 col-sm-1 col-md-2"></div>
+    <div class="col-12 col-sm-6 col-md-3">
+        <div class="home-logo">
+            <%= render "shared/logo" %>
+        </div>
+    </div>
+    <div class="col-0 col-sm-5 col-md-7"></div>
+</div>
+<div class="row">
+    <div class="col-0 col-sm-1 col-md-2"></div>
+    <div class="col-0 col-sm-10 col-md-8">
+        <div class="home-border-container center-flex">
+            <div class="home-container">
+                <h1 class="home">A community for bird lovers.</h1>
 
-    <% else %>
+                <p>
+                    Did you ever wish for a way to keep track of all the birds you spotted? How about finding hot locations for a particular species? Or connecting with a global bird positive community?
+                    <strong>Spot The Bird</strong> is the answer!
+                </p>
 
-      <div class="home-header">
-        <%= render "shared/logo" %>
-      </div>
+                <div class="home-buttons center-flex">
+                    <%= button_to "Log in", new_user_session_path, method: :get, class: "btn-bird btn-mag-outline btn-round btn-home"%>
+                    <%= button_to "Sign up", new_user_registration_path, method: :get, class: "btn-bird btn-mag btn-round btn-home"%>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-0 col-sm-1 col-md-2"></div>
+</div>
 
-      <div class="home-subheader">
-        <h3 class="home">A community for bird lovers</h3>
-      </div>
 
-      <div class="home-buttons">
-        <%= button_to "Log in", new_user_session_path, method: :get, class: "btn-round btn-red btn-home"%>
-        <%= button_to "Sign up", new_user_registration_path, method: :get, class: "btn-round btn-red-outline btn-home"%>
-      </div>
 
-    <% end %>
+
+
+<% end %>
