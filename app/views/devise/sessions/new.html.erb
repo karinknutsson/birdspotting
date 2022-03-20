@@ -1,27 +1,28 @@
-      <div class="login-container">
+<div class="white-container">
+    <div class="padding-16">
+    <h3>Log in</h3>
 
-        <h2>Log in</h2>
-
-        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <div class="form-inputs">
-            <%= f.input :login,
-                        required: true,
-                        label: false,
-                        input_html: { autocomplete: "email", placeholder: "email or username" } %>
-            <%= f.input :password,
-                        required: true,
-                        label: false,
-                        input_html: { autocomplete: "current-password", placeholder: "password" } %>
-            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-          </div>
-
-          <div class="form-actions">
-            <%= f.button :submit, "Log in", class: "btn-submit btn-red btn-fill" %>
-          </div>
-
-          <span class="float-right" style="margin-top: 32px">
-            <%= render "devise/shared/links"%>
-          </span>
-        <% end %>
-
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-inputs">
+        <%= f.input :login,
+                    required: true,
+                    label: false,
+                    input_html: { autocomplete: "email", placeholder: "email or username" } %>
+        <%= f.input :password,
+                    required: true,
+                    label: false,
+                    input_html: { autocomplete: "current-password", placeholder: "password" } %>
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
+
+      <div class="form-actions margin-top-40">
+        <%= f.button :submit, "Submit", class: "btn-bird btn-oblong btn-gold" %>
+      </div>
+
+      <span class="float-right margin-top-40 margin-bottom-16 semi-bold">
+        <%= render "devise/shared/links"%>
+      </span>
+    <% end %>
+
+    </div>
+</div>

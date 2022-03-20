@@ -2,18 +2,18 @@
     <% controller.redirect_to daily_bird_path %>
 <% else %>
 
-            <div class="home-container">
-                <h1 class="home">A community for bird lovers.</h1>
+    <div class="white-container">
+        <h1 class="home">A community for bird lovers.</h1>
 
-                <p>
-                    Did you ever wish for a way to keep track of all the birds you spotted? How about finding hot locations for a particular species? Or connecting with a global bird positive community?
-                    <strong>Spot The Bird</strong> is the answer!
-                </p>
+        <p>
+            Did you ever wish for a way to keep track of all the birds you spotted? How about finding hot locations for a particular species? Or connecting with a global bird positive community?
+            <strong>Spot The Bird</strong> is the answer!
+        </p>
 
-                <div class="home-buttons center-flex">
-                    <%= button_to "Log in", new_user_session_path, method: :get, class: "btn-bird btn-mag-outline btn-round btn-round"%>
-                    <%= button_to "Sign up", new_user_registration_path, method: :get, class: "btn-bird btn-mag btn-round btn-home"%>
-                </div>
-            </div>
+        <div class="home-buttons center-flex">
+            <%= button_to "Log in", new_user_session_path, method: :get, class: "btn-bird btn-mag-outline btn-round btn-round"%>
+            <%= button_to "Sign up", new_user_registration_path, method: :get, class: "btn-bird btn-mag btn-round btn-home"%>
+        </div>
+    </div>
 
 <% end %>

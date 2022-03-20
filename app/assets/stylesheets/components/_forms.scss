@@ -2,7 +2,7 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active  {
-    -webkit-box-shadow: 0 0 0 30px $a-white inset !important;
+    -webkit-box-shadow: 0 0 0 30px $pale-gold inset !important;
 }
 
 input:-webkit-autofill {
@@ -11,12 +11,12 @@ input:-webkit-autofill {
 
 input[type=text], input[type=password], input[type=email] {
   margin-bottom: 24px;
-  // padding: 24px 16px;
-  background: $a-white;
+  width: 256px;
+  background: $pale-gold;
   font-size: 1rem;
   font-weight: 700;
   border: 0;
-  // border-radius: 8px;
+  border-radius: 3px;
 }
 
 textarea {
@@ -25,7 +25,7 @@ textarea {
 }
 
 ::placeholder {
-  color: $light-grey !important;
+  color: $slate !important;
   font-weight: 700;
 }
 
@@ -51,6 +51,10 @@ textarea {
   text-align: center;
 }
 
+.form-check {
+  font-weight: 600;
+}
+
 .label-input {
   font-size: 1rem;
   font-weight: 700;
@@ -62,6 +66,3 @@ textarea {
   justify-content: space-between;
 }
 
-.centered {
-  text-align: center;
-}

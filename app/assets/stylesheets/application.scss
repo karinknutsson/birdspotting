@@ -39,26 +39,8 @@ textarea:focus, input:focus {
   box-shadow: none !important;
 }
 
-h2 {
-  font-weight: 800;
-  font-size: 3rem;
-  // letter-spacing: 0.1rem;
-}
-
-h3.home {
-  font-weight: 700;
-  font-size: 2.6vw;
-  letter-spacing: 0.1vw;
-}
-
-h4 {
-  font-weight: 800;
-  font-size: 1.6rem;
-  // letter-spacing: 0.05rem;
-}
-
-h5, h6 {
-  font-weight: 800;
+h1, h2, h3 {
+  color: $dark-magenta;
 }
 
 a {
@@ -81,6 +63,25 @@ p {
   line-height: 20pt;
 }
 
+.border-container {
+  margin: 16px;
+  padding: 10%;
+  border: 12px solid rgba(255, 255, 255, 0.5);
+  width: auto;
+  height: auto;
+}
+
+.white-container {
+  padding: 32px 40px;
+  background: white;
+  width: auto;
+  height: auto;
+}
+
+.semi-bold {
+  font-weight: 700;
+}
+
 .centered {
   text-align: center;
 }
@@ -89,8 +90,16 @@ p {
   float: right;
 }
 
-.top-margin {
+.margin-top-40 {
   margin-top: 40px;
+}
+
+.margin-bottom-16 {
+  margin-bottom: 16px;
+}
+
+.padding-16 {
+  padding: 16px;
 }
 
 .main-container {

@@ -1,7 +1,19 @@
 .btn-bird {
   font-family: inherit;
-  font-weight: bold;
+  font-weight: 900;
   font-size: 16pt;
+}
+
+.btn-round {
+  width: 104px;
+  height: 104px;
+  border-radius: 100px;
+}
+
+.btn-oblong {
+  width: 256px;
+  height: 48px;
+  border-radius: 3px;
 }
 
 .btn-mag-outline {
@@ -16,10 +28,14 @@
   color: white;
 }
 
-.btn-round {
-  width: 110px;
-  height: 110px;
-  border-radius: 100px;
+.btn-gold {
+  color: white;
+  background: $gold;
+}
+
+.btn-gold:hover, btn-gold:active {
+  background: $pink-magenta;
+  color: white;
 }
 
 .btn-egg {
