@@ -32,7 +32,7 @@ image = URI.open("https://res.cloudinary.com/diucx7fqo/image/upload/v1619608966/
 turkey_vulture.image.attach(io: image, filename: "turkey_vulture", content_type: "image/png")
 turkey_vulture.save
 
-blue_tit = Bird.create(name: "Eurasian blue tit", latin_name: "Cyanistes caeruleus", wiki_name: "Eurasian_blue_tit"
+blue_tit = Bird.create(name: "Eurasian blue tit", latin_name: "Cyanistes caeruleus", wiki_name: "Eurasian_blue_tit",
                        credit: "By © Francis C. Franklin / CC-BY-SA-3.0, CC BY-SA 3.0,\nhttps://commons.wikimedia.org/w/index.php?curid=37675470",
                        description: "The Eurasian blue tit (Cyanistes caeruleus) is a small passerine bird in the tit family, Paridae. It is easily recognisable by its blue and yellow plumage and small size.\n\nEurasian blue tits, usually resident and non-migratory birds, are widespread and a common resident breeder throughout temperate and subarctic Europe and the western Palearctic in deciduous or mixed woodlands with a high proportion of oak. They usually nest in tree holes, although they easily adapt to nest boxes where necessary. Their main rival for nests and in the search for food is the larger and more common great tit.\n\nThe Eurasian blue tit prefers insects and spiders for its diet. Outside the breeding season, they also eat seeds and other vegetable-based foods. The birds are famed for their acrobatic skills, as they can cling to the outermost branches and hang upside down when looking for food."
                       )

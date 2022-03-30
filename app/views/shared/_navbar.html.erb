@@ -1,18 +1,22 @@
-      <div class="nav-birds">
+<div class="container-fluid nav-container">
+    <div class="row">
+        <div class="col-0 col-sm-1 col-md-2"></div>
+        <div class="col-12 col-sm-10 col-md-8 nav-links">
 
-        <%= render "shared/logo-navbar" %>
+                <div style="flex-grow: 0; flex-shrink: 0">
+                    <%= render "shared/logo-navbar" %>
+                </div>
 
-        <div class="nav-links">
-          <%= button_to "Profile", profile_path(current_user), method: :get, class: "nav-btn" %>
-          <%= button_to "New spot", new_user_spot_path(current_user), method: :get, class: "spot-btn" %>
-          <%= button_to "All birds", birds_path, method: :get, class: "nav-btn" %>
-          <%= button_to "Settings", edit_user_registration_path, method: :get, class: "nav-btn" %>
-          <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "nav-btn" %>
+                <div class="center-flex" style="flex-grow: 4">
+                    <%= button_to "Profile", profile_path(current_user), method: :get, class: "nav-btn" %>
+                    <%= button_to "Birds", birds_path, method: :get, class: "nav-btn" %>
+                    <%= button_to "New\nspot", new_user_spot_path(current_user), method: :get, class: "spot-btn" %>
+                    <%= button_to "Settings", edit_user_registration_path, method: :get, class: "nav-btn" %>
+                    <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "nav-btn" %>
+                </div>
+
         </div>
+        <div class="col-0 col-sm-1 col-md-2"></div>
 
-      </div>
-
-      <div class="line-container">
-        <div class="nav-line"></div>
-      </div>
-
+    </div>
+</div>
