@@ -1,22 +1,20 @@
-      <div class="new-bird-container">
-        <h4>
-          Add new bird species
-        </h4>
+<div class="white-auto-container">
+    <div class="add-bird">
+        <h4>Add new bird species</h4>
         <p>
-          To add a new bird species to the database, please find the English species name as listed on <a href="https://en.wikipedia.org/wiki/" target="_blank">Wikipedia.</a>
-          It is crucial that you find the name of a bird species, rather than a genus or a family of birds. For instance, magpie is not a species. To add the bird
-          commonly known as magpie in Europe, you would enter the name eurasian magpie.
+            To add a new bird species to the database, please find the English species name as listed on <a href="https://en.wikipedia.org/wiki/" target="_blank">Wikipedia.</a>
+            It is crucial that you find the name of a bird species, rather than a genus or a family of birds. For instance, <em>magpie</em> is not a species. To add the bird
+            commonly known as magpie in Europe, you would enter <em>eurasian magpie</em>.
         </p>
+    </div>
 
-        <%= simple_form_for [@bird] do |f| %>
-          <div class="new-bird-input">
-            <%= f.input :name,
-                        label: false,
-                        required: true,
-                        input_html: { placeholder: "bird species name" } %>
-          </div>
-          <div class="form-actions">
-            <%= f.button :submit, "Submit", class: "btn-submit btn-red btn-fill" %>
-          </div>
-        <% end %>
-      </div>
+    <%= simple_form_for [@bird] do |f| %>
+        <%= f.input :name,
+                    label: false,
+                    required: true,
+                    input_html: { placeholder: "Bird species name (case-insensitive)" } %>
+        <div class="form-actions margin-top-40 margin-bottom-16">
+            <%= f.button :submit, "Submit", class: "btn-bird btn-oblong btn-gold" %>
+        </div>
+    <% end %>
+</div>

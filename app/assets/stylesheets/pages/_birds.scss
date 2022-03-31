@@ -28,16 +28,6 @@ ul.bird-list {
   }
 }
 
-.new-bird-container {
-  margin: 10vw auto;
-  width: 50vw;
-  p {
-    margin-top: 24px;
-    font-size: 0.9rem;
-    line-height: 1.8rem;
-  }
-}
-
 .new-bird-input {
   margin: 32px auto;
   width: 380px;
@@ -85,3 +75,7 @@ ul.bird-list {
   }
 }
 
+.add-bird {
+  width: 50vw;
+  max-width: 500px;
+}
