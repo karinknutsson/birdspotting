@@ -18,11 +18,17 @@ html, body {
 }
 
 body {
-  font-weight: 600;
+  font-weight: 400;
   width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: $pistachio;
+  /* ---  FOREST PHOTO BY PIXABAY  --- */
+  /*  https://www.pexels.com/@pixabay  */
+  background-image: url('pexels-pixabay.jpg');
+  background-position: center;
+  background-size: cover;
 }
 
 textarea:focus, input:focus {
@@ -32,47 +38,88 @@ textarea:focus, input:focus {
   box-shadow: none !important;
 }
 
-h1.home {
-  font-weight: 900;
-  font-size: 8vw;
-  letter-spacing: 0.3vw;
+h1 {
+  color: $dark-magenta;
 }
 
-h2 {
-  font-weight: 800;
-  font-size: 3rem;
-  // letter-spacing: 0.1rem;
-}
-
-h3.home {
-  font-weight: 700;
-  font-size: 2.6vw;
-  letter-spacing: 0.1vw;
+h3 {
+  font-size: 16pt;
 }
 
 h4 {
-  font-weight: 800;
-  font-size: 1.6rem;
-  // letter-spacing: 0.05rem;
+  margin: 32px 0 16px 0;
+  font-size: 16pt;
 }
 
-h5, h6 {
-  font-weight: 800;
+h5 {
+  margin-top: 32px;
+  font-size: 12pt;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700;
+}
+
+h6 {
+  margin-bottom: 32px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 11pt;
+  font-weight: 600;
+  font-style: italic;
+}
+
+p {
+  margin-top: 16px;
+  font-size: 12pt;
+  line-height: 18pt;
 }
 
 a {
-  color: $soft-red;
+  color: $magenta;
   text-decoration: none;
 }
 
 a:hover, a:active {
-  color: $red-sand;
+  color: $gold;
   text-decoration: none;
 }
 
 ul {
   padding: 0;
   list-style-type: none;
+}
+
+li {
+  margin: 12px;
+}
+
+p {
+  font-size: 12pt;
+  line-height: 20pt;
+}
+
+.border-container {
+  margin: 16px;
+  padding: 8% 10%;
+  border: 12px solid rgba(255, 255, 255, 0.5);
+  width: auto;
+  height: auto;
+}
+
+.white-container {
+  padding: 32px 40px;
+  background: white;
+  width: 100%;
+  height: auto;
+}
+
+.white-auto-container {
+  padding: 32px 40px;
+  background: white;
+  width: auto;
+  height: auto;
+}
+
+.semi-bold {
+  font-weight: 700;
 }
 
 .centered {
@@ -83,8 +130,16 @@ ul {
   float: right;
 }
 
-.top-margin {
+.margin-top-40 {
   margin-top: 40px;
+}
+
+.margin-bottom-16 {
+  margin-bottom: 16px;
+}
+
+.padding-16 {
+  padding: 16px;
 }
 
 .main-container {
@@ -95,14 +150,17 @@ ul {
 
 .map-container {
   margin: 32px 0;
-  padding: 16px;
   height: 320px;
-  background: $a-white;
-  border-radius: 16px;
 }
 
 #map {
   width: 100%;
   height: 100%;
-  border-radius: 2px;
+  border-radius: 3px;
+}
+
+.center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

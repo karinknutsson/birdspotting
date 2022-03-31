@@ -1,30 +1,34 @@
-      <div class="daily-container">
+<div class="white-container">
 
-        <div class="daily-info">
-          <span class="daily-title">
-            Bird of the day
-          </span>
-          <h4><%= link_to @bird.name, bird_path(@bird.id) %></h4>
-          <h6><%= @bird.latin_name %></h6>
-          <div class="daily-spots">
-            <h5>Recent spots</h5>
-            <ul>
-              <% @spots.each do |spot| %>
-                <li>
-                  <%= link_to "#{spot.number} spotted in #{spot.location} on #{spot.spot_date}", user_spot_path(spot.user, spot) %>
-                </li>
-              <% end %>
-            </ul>
-          </div>
-        </div>
+    <span class="daily-title">Bird of the day</span>
+
+    <div class="daily-container">
         <div class="daily-img-container">
-          <% if @bird.image.attached? %>
-            <%= cl_image_tag(@bird.image.key) %>
-            <p><%= @bird.credit %></p>
-          <% else %>
-            <%= image_tag "avatar_default.png" %>
-          <% end %>
+            <% if @bird.image.attached? %>
+                <%= cl_image_tag(@bird.image.key) %>
+                <p><%= @bird.credit %></p>
+            <% else %>
+                <%= image_tag "avatar_default.png" %>
+            <% end %>
         </div>
 
-      </div>
+        <div class="daily-details">
+            <h4><%= link_to @bird.name, bird_path(@bird) %></h4>
+            <h6><%= @bird.latin_name %></h6>
+
+            <div class="daily-spots">
+                <h5>Most recent spots:</h5>
+                <ul>
+                    <% @spots.each do |spot| %>
+                        <li>
+                            <%= link_to "#{spot.number} spotted in #{spot.location} on #{spot.spot_date}", user_spot_path(spot.user, spot) %>
+                        </li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</div>
 

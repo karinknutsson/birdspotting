@@ -5,63 +5,26 @@ ul.bird-list {
   height: 30vh;
 }
 
-.bird-container {
-  margin: 5vw auto 10vw auto;
-  width: 50vw;
-  h5 {
-    font-size: 0.8rem;
-  }
-}
-
-.bird-content {
-  padding: 24px 32px;
-  background: $a-white;
-  border-radius: 16px;
-  h5 {
-    margin: 32px 0 16px 0;
-    font-size: 1.4rem;
-  }
-  h6 {
-    margin-bottom: 32px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    font-style: italic;
-  }
-  p {
-    margin-top: 16px;
-    font-size: 0.9rem;
-    line-height: 1.8rem;
-  }
-}
-
-.birdmap-container {
-  margin: 32px 0;
-  height: 320px;
+.bird-show-container {
+  min-height: 360px;
 }
 
 .bird-img {
-  margin: 16px 0 28px 24px;
-  width: 300px;
-  height: 320px;
+  margin: 0 0 28px 24px;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  max-height: 320px;
+  float: right;
   img {
     width: 100%;
-    border-radius: 2px;
+    border-radius: 3px;
   }
   p {
     margin: 8px 0;
     color: $medium-grey;
     font-size: 0.6rem;
     line-height: 0.8rem;
-  }
-}
-
-.new-bird-container {
-  margin: 10vw auto;
-  width: 50vw;
-  p {
-    margin-top: 24px;
-    font-size: 0.9rem;
-    line-height: 1.8rem;
   }
 }
 
@@ -81,6 +44,38 @@ ul.bird-list {
 }
 
 .source {
-  font-size: 0.8rem;
+  font-size: 8pt;
 }
 
+.list-item {
+  padding: 24px 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.list-letter {
+  width: 80px;
+}
+
+.letter-box {
+  background: $light-slate;
+  width: 64px;
+  height: 64px;
+  color: white;
+  font-weight: 900;
+  font-size: 20pt;
+  border-radius: 32px;
+}
+
+.list-content {
+  font-weight: 700;
+  font-size: 14pt;
+  li {
+    margin: 18px 12px;
+  }
+}
+
+.add-bird {
+  width: 50vw;
+  max-width: 500px;
+}

@@ -1,42 +1,46 @@
-.btn-round {
-  width: 110px;
-  height: 110px;
+.btn-bird {
   font-family: inherit;
-  font-weight: 800;
-  font-size: 1.2rem;
+  font-weight: 900;
+  font-size: 16pt;
+}
+
+.btn-round {
+  width: 104px;
+  height: 104px;
   border-radius: 100px;
 }
 
-.btn-red {
-  color: $a-white;
-  background: $red-sand;
-  border: 0;
+.btn-oblong {
+  width: 50vw;
+  max-width: 500px;
+  height: 48px;
+  border-radius: 3px;
 }
 
-.btn-red-outline {
-  color: $red-sand;
-  background: rgba(0, 0, 0, 0);
-  border: 3px solid $red-sand;
+.btn-mag-outline {
+  border: 3px solid $magenta;
+  color: $magenta;
+  background: white;
 }
 
-.btn-white-outline {
-  color: $a-white;
-  background: rgba(0, 0, 0, 0);
-  border: 3px solid $a-white;
+.btn-mag {
+  border: 3px solid $magenta;
+  background: $magenta;
+  color: white;
+}
+
+.btn-gold {
+  color: white;
+  background: $gold;
+}
+
+.btn-gold:hover, btn-gold:active {
+  background: $pink-magenta;
+  color: white;
 }
 
 .btn-home {
   margin: 0 100px;
-}
-
-.btn-submit {
-  margin-top: 12px;
-  padding: 11px 0;
-  color: $a-white;
-  font-family: inherit;
-  font-weight: 800;
-  font-size: 1.2rem;
-  border-radius: 50px;
 }
 
 .btn-fill {
@@ -46,7 +50,27 @@
 .close {
   margin-top: -12px;
   float: right;
-  color: $a-black;
+  color: black;
   font-weight: 600;
   font-size: 2rem !important;
+}
+
+.back-btn {
+  font-size: 8pt;
+  padding: 16px;
+  width: 72px;
+  height: 72px;
+  color: white;
+  background: $magenta;
+  line-height: 10pt;
+  border-radius: 100px;
+  margin: 8px;
+  font-family: inherit;
+  font-weight: 800;
+  border: 0;
+  text-transform: uppercase;
+}
+
+.back-btn:hover {
+  background: $gold;
 }

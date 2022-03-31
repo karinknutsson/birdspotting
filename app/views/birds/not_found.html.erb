@@ -1,12 +1,12 @@
-      <div class="no-bird-container">
-        <h4>
-          Not found
-        </h4>
+<div class="white-auto-container">
+    <div class="add-bird">
+        <h4>Not found</h4>
         <p>
-          The bird species could not be found. Please check spelling and try again.
+            The bird species could not be found. Please check spelling and try again.
         </p>
+    </div>
 
-        <div class="top-margin centered">
-          <%= button_to "New bird", new_bird_path, method: :get, class: "btn-submit btn-red btn-fill" %>
-        </div>
-      </div>
+    <div class="center-flex">
+        <%= button_to "Add\nbird", new_bird_path, method: :get, class: "spot-btn" %>
+    </div>
+</div>

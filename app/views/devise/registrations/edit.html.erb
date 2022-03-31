@@ -1,45 +1,46 @@
-      <div class="form-container">
+<div class="white-auto-container">
 
-        <h2>Edit profile</h2>
+    <h2>Settings</h2>
 
-        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-          <%= f.error_notification %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= f.error_notification %>
 
-          <div class="form-inputs">
+        <div class="form-inputs">
             <%= f.input :email, label: false, required: true %>
 
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-              <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+                <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
             <% end %>
 
             <%= f.input :username,
-                        label: false,
-                        required: true,
-                        input_html: { value: current_user.username, maxlength: 15 } %>
+                label: false,
+                required: true,
+                input_html: { value: current_user.username, maxlength: 15 } %>
             <%= f.input :bio,
-                        label: false,
-                        required: false,
-                        as: :text,
-                        input_html: { 'rows': 5, 'cols': 10, placeholder: "tell us something about yourself", maxlength: 1200 } %>
+                label: false,
+                required: false,
+                as: :text,
+                input_html: { 'rows': 5, 'cols': 10, placeholder: "tell us something about yourself", maxlength: 1200 } %>
             <%= f.input :password,
-                        label: false,
-                        required: false,
-                        input_html: { placeholder: "new password (leave blank to keep current password)" } %>
+                label: false,
+                required: false,
+                input_html: { placeholder: "new password (leave blank to keep current password)" } %>
             <%= f.input :password_confirmation,
-                        label: false,
-                        required: false,
-                        input_html: { placeholder: "repeat new password" } %>
+                label: false,
+                required: false,
+                input_html: { placeholder: "repeat new password" } %>
             <%= f.input :current_password,
-                        label: false,
-                        required: true,
-                        input_html: { placeholder: "enter current password to confirm changes", autocomplete: "current-password" } %>
-          </div>
+                label: false,
+                required: true,
+                input_html: { placeholder: "enter current password to confirm changes", autocomplete: "current-password" } %>
+        </div>
 
-          <div class="form-actions">
-            <%= f.button :submit, "Update", class: "btn-submit btn-red btn-fill" %>
-          </div>
-        <% end %>
+        <div class="form-actions margin-top-40 margin-bottom-16">
+            <%= f.button :submit, "Submit", class: "btn-bird btn-oblong btn-gold" %>
+        </div>
 
-        <div class="centered" style="margin-top: 64px"><h6><%= link_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></h6></div>
+    <% end %>
 
-      </div>
+    <div class="centered" style="margin-top: 64px"><h5><%= link_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></h5></div>
+
+</div>

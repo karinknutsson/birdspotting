@@ -1,15 +1,16 @@
-.home-header {
-  margin-top: 13vw;
-}
-
-.home-subheader {
-  margin: 4vw 0;
-  float: right;
+.home-logo {
+  margin: 32px 16px;
+  width: 340px !important;
+  height: auto;
 }
 
 .home-buttons {
-  margin: 15vw 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 40px;
+  width: 100%;
+}
+
+h1.home {
+  margin-top: 32px;
+  margin-bottom: 40px;
+  font-size: 42pt;
 }

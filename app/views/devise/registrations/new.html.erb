@@ -1,6 +1,6 @@
-      <div class="login-container">
-
-        <h2>Sign up</h2>
+<div class="white-auto-container">
+    <div class="padding-16">
+        <h3>Sign up</h3>
 
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= f.error_notification %>
@@ -16,20 +16,19 @@
             <%= f.input :password,
                         required: true,
                         label: false,
-                        input_html: { placeholder: "password (6 characters minimum)" } %>
+                        input_html: { placeholder: "password" } %>
             <%= f.input :password_confirmation,
                         required: true,
                         label: false,
                         input_html: { placeholder: "password confirmation" } %>
           </div>
 
-          <div class="form-actions">
-            <%= f.button :submit, "Sign up", class: "btn-submit btn-red btn-fill" %>
+          <div class="form-actions margin-top-40 margin-bottom-16">
+            <%= f.button :submit, "Submit", class: "btn-bird btn-oblong btn-gold" %>
           </div>
 
-          <span class="float-right" style="margin-top: 32px">
-            <%= render "devise/shared/links"%>
-          </span>
         <% end %>
 
-      </div>
+    </div>
+</div>
+

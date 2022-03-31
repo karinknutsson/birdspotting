@@ -7,6 +7,10 @@ class BirdsController < ApplicationController
   def index
     @birds = Bird.all.order(name: :asc)
     policy_scope @birds
+
+    @sorted_birds = @birds.group_by{ |bird| bird.name[0] }.to_a
+
+    #binding.pry
   end
 
   def show
@@ -46,7 +50,7 @@ class BirdsController < ApplicationController
         wiki_children = get_children(doc)
         @bird.description = get_info(wiki_children, @bird.latin_name)
         if @bird.save
-          redirect_to root_path
+          redirect_to birds_path
         else
           render :new
         end
@@ -73,7 +77,7 @@ class BirdsController < ApplicationController
   def daily
     @bird = Bird.all.sample
     authorize @bird
-    @spots = Spot.where(bird: @bird).order(spot_date: :desc).limit(10)
+    @spots = Spot.where(bird: @bird).order(spot_date: :desc).limit(7)
     authorize @spots
   end
 
@@ -110,8 +114,12 @@ class BirdsController < ApplicationController
   end
 
   def get_content(wiki_name)
-    html_content = open("https://en.wikipedia.org/wiki/#{wiki_name}").read
-    Nokogiri::HTML(html_content)
+    begin
+        html_content = open("https://en.wikipedia.org/wiki/#{wiki_name}").read
+        return Nokogiri::HTML(html_content)
+    rescue => e
+        return nil
+    end
   end
 
   def get_latin_name(doc)
