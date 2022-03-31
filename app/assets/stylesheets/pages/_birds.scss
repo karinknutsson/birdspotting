@@ -11,8 +11,10 @@ ul.bird-list {
 
 .bird-img {
   margin: 0 0 28px 24px;
-  width: 300px;
-  height: 320px;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  max-height: 320px;
   float: right;
   img {
     width: 100%;

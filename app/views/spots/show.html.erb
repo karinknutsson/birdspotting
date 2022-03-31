@@ -6,8 +6,6 @@
 
 <div class="spot-content">
 
-
-
     <div class="spot-info">
         <h4>
             <% if @spot.number == 1 %>
@@ -43,7 +41,7 @@
                 Spotted by: <%= link_to @user.username, profile_path(@user) %>
             </li>
             <li>
-                Date:<%= @spot.spot_date %>
+                Date: <%= @spot.spot_date %>
             </li>
             <% if @spot.time != nil %>
                 <li>
