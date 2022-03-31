@@ -88,6 +88,21 @@ image = URI.open("https://res.cloudinary.com/diucx7fqo/image/upload/v1648718204/
 antillean_crested_hummingbird.image.attach(io: image, filename: "antillean_crested_hummingbird", content_type: "image/png")
 antillean_crested_hummingbird.save
 
+rock_dove = Bird.create(name: "Rock dove", latin_name: "Columba livia", wiki_name: "Rock_dove",
+                            credit: "By Diego Delso, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=18837175",
+                            description: "The rock dove, rock pigeon, or common pigeon (/ˈpɪdʒ.ən/ also /ˈpɪdʒ.ɪn/; Columba livia) is a member of the bird family Columbidae (doves and pigeons). In common usage, it is often simply referred to as the \"pigeon\". The domestic pigeon (Columba livia domestica, which includes about 1,000 different breeds) descended from this species. Escaped domestic pigeons have increased the populations of feral pigeons around the world. Wild rock doves are pale grey with two black bars on each wing, whereas domestic and feral pigeons vary in colour and pattern. Few differences are seen between males and females. The species is generally monogamous, with two squabs (young) per brood. Both parents care for the young for a time. Habitats include various open and semi-open environments. Cliffs and rock ledges are used for roosting and breeding in the wild. Originally found wild in Europe, North Africa, and western Asia, pigeons have become established in cities around the world. The species is abundant, with an estimated population of 17 to 28 million feral and wild birds in Europe alone and up to 120 million worldwide. "
+                            )
+image = URI.open("https://res.cloudinary.com/diucx7fqo/image/upload/v1648755507/Paloma_bravi%CC%81a__Columba_livia__Palacio_de_Nymphenburg__Mu%CC%81nich__Alemania01_zaldmp.jpg")
+rock_dove.image.attach(io: image, filename: "rock_dove", content_type: "image/png")
+rock_dove.save
+
+demoiselle_crane = Bird.create(name: "Demoiselle crane", latin_name: "Grus virgo", wiki_name: "Demoiselle_crane",
+                            credit: "By Sumeet Moghe - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=31029537",
+                            description: "The demoiselle crane (Grus virgo) is a species of crane found in central Eurosiberia, ranging from the Black Sea to Mongolia and North Eastern China. There is also a small breeding population in Turkey. These cranes are migratory birds. Birds from western Eurasia will spend the winter in Africa while the birds from Asia, Mongolia and China will spend the winter in the Indian subcontinent. The bird is symbolically significant in the culture of India and Pakistan, where it is known as Koonj or Kurjaa."
+                            )
+image = URI.open("https://res.cloudinary.com/diucx7fqo/image/upload/v1648755500/Demoiselle_Cranes_at_Tal_Chappar_esr1cw.jpg")
+demoiselle_crane.image.attach(io: image, filename: "demoiselle_crane", content_type: "image/png")
+demoiselle_crane.save
 
 
 puts ""
@@ -97,6 +112,13 @@ puts "::::::::::::::::::::: 🧕👩‍🦱 CREATE USERS 🧓👵 ::::::::::::::
 
 def avatar_generator
   avatar = [
+  "https://res.cloudinary.com/diucx7fqo/image/upload/v1648756774/pexels-askar-abayev-5638645_vcztxw.jpg",
+  "https://res.cloudinary.com/diucx7fqo/image/upload/v1648757162/pikwizard-african-american-senior-woman-painting-on-canvas-standing-in-the-balcony-at-home_xienag.jpg",
+  "https://res.cloudinary.com/diucx7fqo/image/upload/v1648757147/pikwizard-businessman-smiling-at-camera_plbqb6.jpg",
+  "https://res.cloudinary.com/diucx7fqo/image/upload/v1648756765/pexels-cliff-booth-4058316_gsym5d.jpg",
+  "https://res.cloudinary.com/diucx7fqo/image/upload/v1648756547/pikwizard-portrait-of-asian-man-wearing-glasses-standing-at-the-terrace-of-corporate-park_wcmug7.jpg",
+  "https://res.cloudinary.com/diucx7fqo/image/upload/v1648756477/pikwizard-active-senior-man-taking-a-nap-on-his-bag-in-forest_q42c1d.jpg",
+  "https://res.cloudinary.com/diucx7fqo/image/upload/v1648756459/ravi-patel-VMGAbeeJTKo-unsplash_xzip1c.jpg",
   "https://res.cloudinary.com/diucx7fqo/image/upload/v1619536655/adult-baseball-cap-black-t-shirt-1211480-ID12098-900x600_tfpxxh.jpg",
   "https://res.cloudinary.com/diucx7fqo/image/upload/v1619536673/action-adult-blur-620336-ID12049-900x600_tndkfe.jpg",
   "https://res.cloudinary.com/diucx7fqo/image/upload/v1619536681/abstract-art-bright-682025-ID12041-900x600_voqp24.jpg",
@@ -105,20 +127,16 @@ def avatar_generator
   "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537033/adult-art-checking-phone-296654-ID12084-900x600_w9e7fq.jpg",
   "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537121/adult-beautiful-cap-1191483-ID12116-900x600_uddjkm.jpg",
   "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537114/adult-beautiful-beautiful-girl-892220-ID12105-900x600_u7pfss.jpg",
-  "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537131/adult-beautiful-beauty-1035682-ID12106-900x600_hwneh5.jpg",
   "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537232/adult-close-up-cold-1002406-ID12134-599x900_uj8uot.jpg",
   "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537247/adult-bob-marley-city-1194419-ID12125-900x609_tcg99h.jpg",
   "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537253/adult-beautiful-beauty-1054422-ID12107-900x544_czxbiz.jpg",
   "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537523/backpack-blur-city-1205379-ID12213-900x720_b0zoku.jpg",
   "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537546/blurred-background-close-up-colorful-1229177-ID12278-900x600_zisykg.jpg",
-  "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537535/beautiful-beauty-face-1180023-ID12230-900x599_c3vlra.jpg",
   "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537554/bow-tie-eyeglasses-eyewear-173295-ID12287-900x691_gzptyh.jpg",
   "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537634/casual-emotional-facial-expression-1182312-ID12313-900x600_t64xns.jpg",
-  "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537715/cigarette-close-up-daytime-963444-ID12320-900x600_ge679g.jpg",
   "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537725/face-facial-hair-fine-looking-614810-ID12346-900x769_coajyh.jpg",
   "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537893/attractive-beautiful-beauty-1147395-ID12408-900x600_ojch6w.jpg",
   "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537882/adult-blur-boardwalk-567459-ID12377-900x601_h7c9vj.jpg",
-  "https://res.cloudinary.com/diucx7fqo/image/upload/v1619537904/environment-festival-girl-690729-ID12345-900x600_le89ww.jpg"
   ]
 
   if @avatar_count < avatar.length
@@ -134,7 +152,7 @@ counter = 0
 
 locations = %w[Berlin Acapulco Toluca Cancun Quito Paris London Moscow Kyoto Vancouver Rome Palermo Cairo Khartoum Juba Abuja Abidjan Ulaanbaatar Dalian Bismarck Minneapolis Stockholm Oslo Helsinki Durango Toledo]
 
-15.times do
+20.times do
   username = Faker::Internet.username
   while username.length > 15
     username = Faker::Internet.username
@@ -159,13 +177,13 @@ puts ""
 puts "::::::::::::::::::::: 🐧🐧 CREATE SPOTS 🔭🧔 :::::::::::::::::::::::"
 
 time_of_days = ["early in the morning", "in the morning", "in the evening", "at sunset", "at sunrise", "at daybreak", "around noon", "in the afternoon", "late at night", "just before noon", "late afternoon", "early afternoon", "in the hour of the wolf"]
-adjectives = ["beautiful", "majestic", "delightful", "cute", "pretty", "elegant", "graceful", "bewitching", "magnificent", "sublime", "stately"]
+adjectives = ["beautiful", "majestic", "delightful", "cute", "pretty", "graceful", "bewitching", "magnificent", "sublime", "stately", "spectacular", "breathtaking"]
 
 200.times do
   spot = Spot.create(bird: Bird.all.sample, user: User.all.sample, spot_date: Date.today-rand(1000), location: locations.sample, number: rand(10) + 1)
   if spot.number == 1
     adjective = adjectives.sample
-    spot.note = "Spotted a#{n if adjective == 'elegant'} #{adjective} #{spot.bird.name.downcase} #{time_of_days.sample}."
+    spot.note = "Spotted a #{adjective} #{spot.bird.name.downcase} #{time_of_days.sample}."
   else
     spot.note = "Spotted some #{adjectives.sample} #{spot.bird.name.downcase}s #{time_of_days.sample}."
   end
