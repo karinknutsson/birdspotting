@@ -1,35 +1,31 @@
-      <div class="profile-container">
+<div class="white-container">
 
-        <div class="profile-content">
+    <div class="profile-content">
 
-          <div class="profile-info">
-            <h4><%= @user.username %></h4>
-            <p>
-              <%= @user.bio %>
-            </p>
-
-            <div class="profile-spots">
-              <h6>Recent spots</h6>
-              <ul>
-                <% @recent_spots.each do |spot| %>
-                  <li><%= link_to "#{spot.bird.name} in #{spot.location} on #{spot.spot_date}", user_spot_path(@user, spot) %></li>
-                <% end %>
-              </ul>
-            </div>
-          </div>
-
-          <div class="profile-pic">
+        <div class="profile-pic">
             <% if @user.avatar.attached? %>
-              <%= cl_image_tag(@user.avatar.key) %>
+                <%= cl_image_tag(@user.avatar.key) %>
             <% else %>
-              <%= image_tag "avatar_default.png" %>
+                <%= image_tag "avatar_default.png" %>
             <% end %>
-          </div>
-
         </div>
 
-        <div class="centered">
-          <%= link_to "View all spots", user_spots_path(@user), action: :get, class: "btn-submit btn-red btn-fill" %>
+        <div class="profile-info">
+            <h4><%= @user.username %></h4>
+            <p><%= @user.bio %></p>
+
+            <h5>Most recent spots:</h5>
+            <ul>
+                <% @recent_spots.each do |spot| %>
+                    <li><%= link_to "#{spot.bird.name} in #{spot.location} on #{spot.spot_date}", user_spot_path(@user, spot) %></li>
+                <% end %>
+            </ul>
         </div>
 
-      </div>
+    </div>
+
+    <div class="centered">
+        <%= button_to "All\nspots", user_spots_path(@user), method: :get, class: "btn-bird spot-btn" %>
+    </div>
+
+</div>

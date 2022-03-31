@@ -140,7 +140,7 @@ locations = %w[Berlin Acapulco Toluca Cancun Quito Paris London Moscow Kyoto Van
     username = Faker::Internet.username
   end
   user = User.create(email: Faker::Internet.email, username: username, password: "sdfjkl",
-                     bio: "My name is #{Faker::Name.first_name}, I live in #{locations.sample} and I love birds. My favorite bird is #{Bird.all.sample.name}.")
+                     bio: "My name is #{Faker::Name.first_name}, I live in #{locations.sample} and I love birds. My favorite bird is #{Bird.all.sample.name}. I do not actually exist. Do you?")
   image = URI.open(avatar_generator)
   user.avatar.attach(io: image, filename: "user#{counter}", content_type: "image/png")
   user.save
@@ -148,7 +148,7 @@ locations = %w[Berlin Acapulco Toluca Cancun Quito Paris London Moscow Kyoto Van
 end
 
 user = User.create(email: "marge@email.com", username: "Marge", password: "sdfjkl",
-                   bio: "Hello! I am Marge and I do not actually exist. Do you?")
+                   bio: "Hello! My name is Marge and I do not actually exist. Do you?")
 image = URI.open("https://res.cloudinary.com/diucx7fqo/image/upload/v1620026289/image_ikedfy.jpg")
 user.avatar.attach(io: image, filename: "marge", content_type: "image/png")
 user.save
@@ -161,7 +161,7 @@ puts "::::::::::::::::::::: 🐧🐧 CREATE SPOTS 🔭🧔 :::::::::::::::::::::
 time_of_days = ["early in the morning", "in the morning", "in the evening", "at sunset", "at sunrise", "at daybreak", "around noon", "in the afternoon", "late at night", "just before noon", "late afternoon", "early afternoon", "in the hour of the wolf"]
 adjectives = ["beautiful", "majestic", "delightful", "cute", "pretty", "elegant", "graceful", "bewitching", "magnificent", "sublime", "stately"]
 
-100.times do
+200.times do
   spot = Spot.create(bird: Bird.all.sample, user: User.all.sample, spot_date: Date.today-rand(1000), location: locations.sample, number: rand(10) + 1)
   if spot.number == 1
     adjective = adjectives.sample
