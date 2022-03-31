@@ -5,33 +5,8 @@ ul.bird-list {
   height: 30vh;
 }
 
-.bird-container {
-  margin: 5vw auto 10vw auto;
-  width: 50vw;
-  h5 {
-    font-size: 0.8rem;
-  }
-}
-
 .bird-content {
-  padding: 24px 32px;
-  background: $a-white;
-  border-radius: 16px;
-  h5 {
-    margin: 32px 0 16px 0;
-    font-size: 1.4rem;
-  }
-  h6 {
-    margin-bottom: 32px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    font-style: italic;
-  }
-  p {
-    margin-top: 16px;
-    font-size: 0.9rem;
-    line-height: 1.8rem;
-  }
+
 }
 
 .birdmap-container {

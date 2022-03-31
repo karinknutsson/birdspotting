@@ -46,6 +46,32 @@ h3 {
   font-size: 16pt;
 }
 
+h4 {
+  margin: 32px 0 16px 0;
+  font-size: 16pt;
+}
+
+h5 {
+  margin-top: 32px;
+  font-size: 12pt;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700;
+}
+
+h6 {
+  margin-bottom: 32px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 11pt;
+  font-weight: 600;
+  font-style: italic;
+}
+
+p {
+  margin-top: 16px;
+  font-size: 12pt;
+  line-height: 18pt;
+}
+
 a {
   color: $magenta;
   text-decoration: none;

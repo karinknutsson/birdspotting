@@ -1,30 +1,26 @@
-      <div class="bird-container">
+<div class="white-container">
 
-        <div class="bird-content">
-          <div class="bird-img" style="float: right">
-            <% if @bird.image.attached? %>
-              <%= cl_image_tag(@bird.image.key) %>
-              <p><%= @bird.credit %></p>
-            <% else %>
-              <%= image_tag "avatar_default.png" %>
-            <% end %>
-          </div>
+    <div>
+        <div class="bird-img" style="float: right">
+        <% if @bird.image.attached? %>
+        <%= cl_image_tag(@bird.image.key) %>
+        <p><%= @bird.credit %></p>
+        <% else %>
+        <%= image_tag "avatar_default.png" %>
+        <% end %>
+    </div>
 
-          <h5><%= @bird.name %></h5>
-          <h6>
-            <%= @bird.latin_name %>
-          </h6>
-          <p>
-            <%= @bird.description %>
-          </p>
+    <h4><%= @bird.name %></h4>
+    <h6><%= @bird.latin_name %></h6>
+    <p><%= @bird.description %></p>
 
-          <div class="source">
-            Source: <a href="<%= @bird_url %>" target="_blank">Wikipedia</a>
-          </div>
+    <div class="source">
+        Source: <a href="<%= @bird_url %>" target="_blank">Wikipedia</a>
+    </div>
 
-          <div class="birdmap-container">
-            <div id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"></div>
-          </div>
-        </div>
+    <h5><%= @bird.name %>s has been spotted in the following locations:</h5>
+    <div class="birdmap-container">
+        <div id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"></div></div>
+    </div>
 
-      </div>
+</div>
