@@ -114,8 +114,12 @@ class BirdsController < ApplicationController
   end
 
   def get_content(wiki_name)
-    html_content = open("https://en.wikipedia.org/wiki/#{wiki_name}").read
-    Nokogiri::HTML(html_content)
+    begin
+        html_content = open("https://en.wikipedia.org/wiki/#{wiki_name}").read
+        return Nokogiri::HTML(html_content)
+    rescue => e
+        return nil
+    end
   end
 
   def get_latin_name(doc)
