@@ -60,9 +60,25 @@ american_crow = Bird.create(name: "American crow", latin_name: "Corvus brachyrhy
                             credit: "CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=2310490",
                             description: "The American crow is a large passerine bird species of the family Corvidae. It is a common bird found throughout much of North America. American crows are the New World counterpart to the carrion crow and the hooded crow. Although the American crow and the hooded crow are very similar in size, structure and behavior, their calls are different. The American crow, nevertheless, occupies the same role that the hooded crow does in Eurasia.From beak to tail, an American crow measures 40–50 cm (16–20 in), almost half of which is tail. Mass varies from about 300 to 600 g (11 to 21 oz). Males tend to be larger than females. The most usual call is CaaW!-CaaW!-CaaW!.The American crow is all black, with iridescent feathers. It looks much like other all-black corvids. They can be distinguished from the common raven (C. corax) because American crows are smaller, from the fish crow (C. ossifragus) because American crows do not hunch and fluff their throat feathers when they call and from the carrion crow (C. corone) by size, as the carrion crow is larger and of a stockier build.American crows are common, widespread, and susceptible to the West Nile virus, making them useful as a bioindicator to track the virus's spread. Direct transmission of the virus from crows to humans is impossible."
                            )
-image = URI.open("https://res.cloudinary.com/diucx7fqo/image/upload/v1619608996/Neophron_percnopterus_-_01_uaexsw.jpg")
+image = URI.open("https://res.cloudinary.com/diucx7fqo/image/upload/v1648717227/Corvus-brachyrhynchos-001_d421gj.jpg")
 american_crow.image.attach(io: image, filename: "american_crow", content_type: "image/png")
 american_crow.save
+
+eurasian_jay = Bird.create(name: "Eurasian jay", latin_name: "Garrulus glandarius", wiki_name: "Eurasian_jay",
+                            credit: "By Luc Viatour, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=5933620",
+                            description: "The Eurasian jay (Garrulus glandarius) is a species of passerine bird in the family Corvidae. It occurs over a vast region from western Europe and north-west Africa to the Indian subcontinent and further to the eastern seaboard of Asia and down into south-east Asia. Across this vast range, several distinct racial forms have evolved which look very different from each other, especially when comparing forms at the extremes of its range. The bird is called jay, without any epithets, by English speakers in Great Britain and Ireland. "
+                            )
+image = URI.open("https://res.cloudinary.com/diucx7fqo/image/upload/v1648717490/Garrulus_glandarius_1_Luc_Viatour_frimzr.jpg")
+eurasian_jay.image.attach(io: image, filename: "eurasian_jay", content_type: "image/png")
+eurasian_jay.save
+
+mute_swan = Bird.create(name: "Mute swan", latin_name: "Cygnus olor", wiki_name: "Mute_swan",
+                            credit: "By Yerpo - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=6117285",
+                            description: "The mute swan (Cygnus olor) is a species of swan and a member of the waterfowl family Anatidae. It is native to much of Eurosiberia, and (as a rare winter visitor) the far north of Africa. It is an introduced species in North America, home to the largest populations outside of its native range, with additional smaller introductions in Australasia and southern Africa. The name 'mute' derives from it being less vocal than other swan species. Measuring 125 to 170 cm (49 to 67 in) in length, this large swan is wholly white in plumage with an orange beak bordered with black. It is recognisable by its pronounced knob atop the beak, which is larger in males."
+                            )
+image = URI.open("https://res.cloudinary.com/diucx7fqo/image/upload/v1648717839/Mute_swan_Vrhnika_pkwqqo.jpg")
+mute_swan.image.attach(io: image, filename: "mute_swan", content_type: "image/png")
+mute_swan.save
 
 
 
