@@ -80,6 +80,14 @@ image = URI.open("https://res.cloudinary.com/diucx7fqo/image/upload/v1648717839/
 mute_swan.image.attach(io: image, filename: "mute_swan", content_type: "image/png")
 mute_swan.save
 
+antillean_crested_hummingbird = Bird.create(name: "Antillean crested hummingbird", latin_name: "Orthorhyncus cristatus", wiki_name: "Antillean_crested_hummingbird",
+                            credit: "By Charles J. Sharp - Own work, from Sharp Photography, sharpphotography, CC BY 3.0, https://commons.wikimedia.org/w/index.php?curid=12373840",
+                            description: "The Antillean crested hummingbird (Orthorhyncus cristatus) is a species of hummingbird in the family Trochilidae. Found across Anguilla, Antigua and Barbuda, Barbados, Dominica, Grenada, Guadeloupe, Martinique, Montserrat, north-east Puerto Rico, Saba, Saint-Barthélemy, Saint Kitts and Nevis, Saint Lucia, Saint Martin, Saint Vincent and the Grenadines, Sint Eustatius, the British Virgin Islands, the U.S. Virgin Islands, and the Lesser Antilles, while it has also been recorded as a vagrant in Florida, USA."
+                            )
+image = URI.open("https://res.cloudinary.com/diucx7fqo/image/upload/v1648718204/Antillean_crested_hummingbird_dkcxsg.jpg")
+antillean_crested_hummingbird.image.attach(io: image, filename: "antillean_crested_hummingbird", content_type: "image/png")
+antillean_crested_hummingbird.save
+
 
 
 puts ""

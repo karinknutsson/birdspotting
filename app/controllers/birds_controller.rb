@@ -73,7 +73,7 @@ class BirdsController < ApplicationController
   def daily
     @bird = Bird.all.sample
     authorize @bird
-    @spots = Spot.where(bird: @bird).order(spot_date: :desc).limit(10)
+    @spots = Spot.where(bird: @bird).order(spot_date: :desc).limit(7)
     authorize @spots
   end
 
