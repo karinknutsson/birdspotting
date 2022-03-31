@@ -11,17 +11,19 @@ input:-webkit-autofill {
 
 input[type=text], input[type=password], input[type=email] {
   margin-bottom: 24px;
-  width: 256px;
+  width: 50vw;
+  max-width: 500px;
   background: $pale-gold;
-  font-size: 1rem;
+  font-size: 12pt;
   font-weight: 700;
   border: 0;
   border-radius: 3px;
 }
 
-textarea {
+textarea#user_bio {
   resize: none;
   font-weight: 700 !important;
+  background: $pale-gold;
 }
 
 ::placeholder {
@@ -31,11 +33,6 @@ textarea {
 
 .login-container {
   margin: 10vw auto 20vw auto;
-  width: 40vw;
-}
-
-.form-container {
-  margin: 10vw auto;
   width: 40vw;
 }
 
