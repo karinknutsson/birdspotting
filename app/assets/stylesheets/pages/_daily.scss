@@ -1,19 +1,17 @@
-li {
-  margin: 12px;
-}
-
 .daily-container {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  flex-direction: row-reverse;
   gap: 32px;
   flex-wrap: wrap;
 }
 
-.daily-info {
+.daily-spots {
+  width: 100%;
   ul {
     margin-top: 16px;
-    width: 400px;
+    width: 100%;
   }
   li {
     margin: 0;
@@ -27,6 +25,11 @@ li {
   li:nth-child(even) {
     background: white;
   }
+}
+
+.daily-details {
+  width: 100%;
+  max-width: 400px;
 }
 
 .daily-title {

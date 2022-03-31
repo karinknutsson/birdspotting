@@ -7,6 +7,10 @@ class BirdsController < ApplicationController
   def index
     @birds = Bird.all.order(name: :asc)
     policy_scope @birds
+
+    @sorted_birds = @birds.group_by{ |bird| bird.name[0] }.to_a
+
+    #binding.pry
   end
 
   def show

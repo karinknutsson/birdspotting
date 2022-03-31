@@ -1,11 +1,18 @@
-      <div class="bird-container">
+<div class="white-auto-container">
 
-        <ul class="bird-list">
-          <% @birds.each do |bird| %>
-            <li>
-              <h5><%= link_to bird.name, bird_path(bird) %></h5>
-            </li>
-          <% end %>
-        </ul>
+    <% @sorted_birds.each do |letter| %>
+        <div class="list-item">
+            <div class="list-letter">
+                <div class="letter-box center-flex"><%= letter[0] %></div>
+            </div>
+            <div class="list-content">
+                <ul>
+                    <% letter[1].each do |bird| %>
+                        <li><%= link_to bird.name, bird_path(bird) %></li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+    <% end %>
 
-      </div>
+</div>

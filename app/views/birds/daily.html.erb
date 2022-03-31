@@ -1,11 +1,19 @@
 <div class="white-container">
 
-<div class="daily-info">
     <span class="daily-title">Bird of the day</span>
 
     <div class="daily-container">
-        <div>
-            <h4><%= link_to @bird.name, bird_path(@bird.id) %></h4>
+        <div class="daily-img-container">
+            <% if @bird.image.attached? %>
+                <%= cl_image_tag(@bird.image.key) %>
+                <p><%= @bird.credit %></p>
+            <% else %>
+                <%= image_tag "avatar_default.png" %>
+            <% end %>
+        </div>
+
+        <div class="daily-details">
+            <h4><%= link_to @bird.name, bird_path(@bird) %></h4>
             <h6><%= @bird.latin_name %></h6>
 
             <div class="daily-spots">
@@ -19,17 +27,8 @@
                 </ul>
             </div>
         </div>
-
-        <div class="daily-img-container">
-            <% if @bird.image.attached? %>
-                <%= cl_image_tag(@bird.image.key) %>
-                <p><%= @bird.credit %></p>
-            <% else %>
-                <%= image_tag "avatar_default.png" %>
-            <% end %>
-        </div>
     </div>
-</div>
+
 
 </div>
 
