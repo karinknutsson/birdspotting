@@ -19,7 +19,7 @@
     </div>
 
     <h5><%= @bird.name %>s has been spotted in the following locations:</h5>
-    <div class="birdmap-container">
+    <div class="map-container">
         <div id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"></div></div>
     </div>
 

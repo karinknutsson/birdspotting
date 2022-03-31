@@ -78,7 +78,7 @@ a {
 }
 
 a:hover, a:active {
-  color: $pink-magenta;
+  color: $gold;
   text-decoration: none;
 }
 
@@ -94,13 +94,20 @@ p {
 
 .border-container {
   margin: 16px;
-  padding: 10%;
+  padding: 8% 10%;
   border: 12px solid rgba(255, 255, 255, 0.5);
   width: auto;
   height: auto;
 }
 
 .white-container {
+  padding: 32px 40px;
+  background: white;
+  width: 100%;
+  height: auto;
+}
+
+.white-auto-container {
   padding: 32px 40px;
   background: white;
   width: auto;
@@ -139,10 +146,7 @@ p {
 
 .map-container {
   margin: 32px 0;
-  padding: 16px;
   height: 320px;
-  background: $a-white;
-  border-radius: 16px;
 }
 
 #map {

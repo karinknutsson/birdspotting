@@ -4,63 +4,36 @@
   height: 60vw;
 }
 
-.spot-container {
-  margin: 0 auto 10vw auto;
-  width: 70vw;
-}
-
 .spot-content {
-  padding: 24px;
-  background: $a-white;
-  border-radius: 16px;
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
+  gap: 32px;
 }
 
 .spot-user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
   padding: 24px;
-  width: 25%;
-  background: $pale-emerald;
-  border-radius: 16px;
+  background: $light-slate;
+  border-radius: 3px;
+  width: 100%;
   ul {
     margin: 0;
   }
   li {
     margin: 8px 0;
-    font-size: 0.9rem;
+    font-size: 11pt;
     font-weight: 700;
   }
 }
 
-.spot-info {
-  width: 70%;
-  // padding: 16px;
-  // background: $a-white;
-  // border-radius: 16px;
-  h5 {
-    margin: 16px 0;
-    font-size: 1.4rem;
-  }
-  h6 {
-    margin-bottom: 32px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    font-style: italic;
-  }
-  p {
-    margin-top: 16px;
-    font-size: 0.9rem;
-    line-height: 1.8rem;
-  }
-}
-
 .spot-user-pic {
-  margin-bottom: 16px;
-  text-align: center;
   img {
-    width: 96px;
-    height: 96px;
+    width: 80px;
+    height: 80px;
     border-radius: 50px;
     object-fit: cover;
   }

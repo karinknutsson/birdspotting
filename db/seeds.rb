@@ -158,12 +158,16 @@ user.save
 puts ""
 puts "::::::::::::::::::::: 🐧🐧 CREATE SPOTS 🔭🧔 :::::::::::::::::::::::"
 
+time_of_days = ["early in the morning", "in the morning", "in the evening", "at sunset", "at sunrise", "at daybreak", "around noon", "in the afternoon", "late at night", "just before noon", "late afternoon", "early afternoon", "in the hour of the wolf"]
+adjectives = ["beautiful", "majestic", "delightful", "cute", "pretty", "elegant", "graceful", "bewitching", "magnificent", "sublime", "stately"]
+
 100.times do
-  spot = Spot.create(bird: Bird.all.sample, user: User.all.sample, spot_date: Date.today-rand(1000), location: locations.sample, number: rand(20) + 1)
+  spot = Spot.create(bird: Bird.all.sample, user: User.all.sample, spot_date: Date.today-rand(1000), location: locations.sample, number: rand(10) + 1)
   if spot.number == 1
-    spot.note = "Spotted a beautiful #{spot.bird.name.downcase} early in the morning."
+    adjective = adjectives.sample
+    spot.note = "Spotted a#{n if adjective == 'elegant'} #{adjective} #{spot.bird.name.downcase} #{time_of_days.sample}."
   else
-    spot.note = "Spotted some beautiful #{spot.bird.name.downcase}s early in the morning."
+    spot.note = "Spotted some #{adjectives.sample} #{spot.bird.name.downcase}s #{time_of_days.sample}."
   end
   spot.save
 end
