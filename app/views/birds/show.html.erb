@@ -1,21 +1,22 @@
 <div class="white-container">
 
-    <div>
-        <div class="bird-img" style="float: right">
-        <% if @bird.image.attached? %>
-        <%= cl_image_tag(@bird.image.key) %>
-        <p><%= @bird.credit %></p>
-        <% else %>
-        <%= image_tag "avatar_default.png" %>
-        <% end %>
-    </div>
+    <div class="bird-show-container">
+        <div class="bird-img">
+            <% if @bird.image.attached? %>
+                <%= cl_image_tag(@bird.image.key) %>
+                <p><%= @bird.credit %></p>
+            <% else %>
+                <%= image_tag "avatar_default.png" %>
+            <% end %>
+        </div>
 
-    <h4><%= @bird.name %></h4>
-    <h6><%= @bird.latin_name %></h6>
-    <p><%= @bird.description %></p>
+        <h4><%= @bird.name %></h4>
+        <h6><%= @bird.latin_name %></h6>
+        <p><%= @bird.description %></p>
 
-    <div class="source">
-        Source: <a href="<%= @bird_url %>" target="_blank">Wikipedia</a>
+        <div class="source">
+            Source: <a href="<%= @bird_url %>" target="_blank">Wikipedia</a>
+        </div>
     </div>
 
     <h5><%= @bird.name %>s has been spotted in the following locations:</h5>

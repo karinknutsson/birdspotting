@@ -46,7 +46,7 @@ class BirdsController < ApplicationController
         wiki_children = get_children(doc)
         @bird.description = get_info(wiki_children, @bird.latin_name)
         if @bird.save
-          redirect_to root_path
+          redirect_to birds_path
         else
           render :new
         end

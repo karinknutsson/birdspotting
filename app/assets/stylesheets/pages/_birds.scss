@@ -5,10 +5,15 @@ ul.bird-list {
   height: 30vh;
 }
 
+.bird-show-container {
+  min-height: 360px;
+}
+
 .bird-img {
-  margin: 16px 0 28px 24px;
+  margin: 0 0 28px 24px;
   width: 300px;
   height: 320px;
+  float: right;
   img {
     width: 100%;
     border-radius: 3px;
