@@ -1,0 +1,13 @@
+<div class="white-auto-container">
+    <div class="add-bird margin-bottom-40">
+        <h4>Thank you!</h4>
+        <p>
+            It is much appreciated that you took the time to help build this community by adding a new bird to the database. Every bird is important!
+        </p>
+    </div>
+
+    <div class="profile-btn-container margin-bottom-16">
+        <%= button_to "New\nspot", new_user_spot_path(current_user), method: :get, class: "btn-bird spot-btn" %>
+        <%= button_to "Bird\nlist", birds_path, method: :get, class: "btn-bird spot-btn" %>
+    </div>
+</div>
