@@ -42,11 +42,11 @@ class BirdsController < ApplicationController
     else
       @bird.wiki_name = make_name_wiki(@bird.name)
       doc = get_content(@bird.wiki_name)
-      @bird.latin_name = get_latin_name(doc)
 
-      if @bird.latin_name.nil?
+      if doc.nil?
         redirect_to not_found_path
       else
+        @bird.latin_name = get_latin_name(doc)
         wiki_children = get_children(doc)
         @bird.description = get_info(wiki_children, @bird.latin_name)
         if @bird.save

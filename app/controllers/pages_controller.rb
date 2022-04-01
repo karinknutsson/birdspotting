@@ -13,4 +13,14 @@ class PagesController < ApplicationController
   def settings
     @user = User.find(params[:id])
   end
+
+  def life_list
+    @user = User.find(params[:id])
+    @spots = Spot.where(user: @user)
+    @ids = []
+    @spots.each { |spot| @ids.push(spot.bird_id) if @ids.none? { |id| id == spot.bird_id } }
+
+    @birds = Bird.where(id: @ids).order(:name)
+    #binding.pry
+  end
 end
