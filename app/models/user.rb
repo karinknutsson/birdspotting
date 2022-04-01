@@ -9,6 +9,10 @@ class User < ApplicationRecord
   has_many :spots, dependent: :destroy
   has_one_attached :avatar, dependent: :destroy
 
+  has_many :authored_conversations, class_name: 'Conversation', foreign_key: 'author_id'
+  has_many :received_conversations, class_name: 'Conversation', foreign_key: 'received_id'
+  has_many :direct_messages, dependent: :destroy
+
   validates :username, presence: true, uniqueness: { case_sensitive: false }
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
   validates :username, length: { in: 2..15 }
