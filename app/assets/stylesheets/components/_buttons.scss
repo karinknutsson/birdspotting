@@ -23,9 +23,21 @@
   background: white;
 }
 
+.btn-mag-outline:hover, .btn-mag-outline:active {
+  border: 3px solid $pink-magenta;
+  color: $pink-magenta;
+  background: white;
+}
+
 .btn-mag {
   border: 3px solid $magenta;
   background: $magenta;
+  color: white;
+}
+
+.btn-mag:hover, .btn-mag:active {
+  border: 3px solid $pink-magenta;
+  background: $pink-magenta;
   color: white;
 }
 
@@ -72,5 +84,5 @@
 }
 
 .back-btn:hover {
-  background: $gold;
+  background: $pink-magenta;
 }

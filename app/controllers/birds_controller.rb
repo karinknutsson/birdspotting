@@ -7,10 +7,7 @@ class BirdsController < ApplicationController
   def index
     @birds = Bird.all.order(name: :asc)
     policy_scope @birds
-
     @sorted_birds = @birds.group_by{ |bird| bird.name[0] }.to_a
-
-    #binding.pry
   end
 
   def show
@@ -39,22 +36,27 @@ class BirdsController < ApplicationController
 
     if Bird.all.find_by(name: @bird.name)
       redirect_to found_path
+      return
     else
       @bird.wiki_name = make_name_wiki(@bird.name)
       doc = get_content(@bird.wiki_name)
       @bird.latin_name = get_latin_name(doc)
 
-      if @bird.latin_name.nil?
+      if doc.nil? || @bird.latin_name.nil?
         redirect_to not_found_path
-      else
-        wiki_children = get_children(doc)
-        @bird.description = get_info(wiki_children, @bird.latin_name)
-        if @bird.save
-          redirect_to birds_path
-        else
-          render :new
-        end
+        return
       end
+
+      wiki_children = get_children(doc)
+      @bird.description = get_info(wiki_children, @bird.latin_name)
+
+      if @bird.save
+        redirect_to thanks_path
+        return
+      else
+        render :new
+      end
+
     end
   end
 
@@ -87,6 +89,11 @@ class BirdsController < ApplicationController
   end
 
   def not_found
+    @bird = Bird.new
+    authorize @bird
+  end
+
+  def thanks
     @bird = Bird.new
     authorize @bird
   end

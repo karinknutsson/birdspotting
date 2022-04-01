@@ -32,4 +32,8 @@ class BirdPolicy < ApplicationPolicy
   def not_found?
     true
   end
+
+  def thanks?
+    true
+  end
 end

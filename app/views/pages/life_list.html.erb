@@ -1,0 +1,14 @@
+<div class="white-auto-container">
+    <div class="all-spots">
+        <h4>All birds spotted by <%= @user.username %>:</h4>
+        <ul style="margin-top: 32px">
+            <% @birds.each do |bird| %>
+                <li><%= link_to "#{bird.name}", bird_path(bird) %></li>
+            <% end %>
+        </ul>
+    </div>
+
+    <div class="center-flex margin-top-40">
+        <%= button_to "Back to\nprofile", profile_path(@user), method: :get, class: "back-btn" %>
+    </div>
+</div>
