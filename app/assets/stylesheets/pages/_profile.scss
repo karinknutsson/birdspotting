@@ -10,7 +10,7 @@
 
 .profile-info {
   width: 100%;
-  max-width: 400px;
+  max-width: 520px;
   ul {
     margin-top: 16px;
     width: 100%;
@@ -50,4 +50,22 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@media (max-width: 1500px) {
+  .profile-info {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 1260px) {
+  .profile-info {
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .profile-info {
+    max-width: 600px;
+  }
 }

@@ -63,7 +63,7 @@ textarea#user_bio, textarea#spot_note {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
+  gap: 8px;
 }
 
 .spot_spot_date {
@@ -80,7 +80,7 @@ textarea#user_bio, textarea#spot_note {
 
 #spot_bird_id, #spot_number {
   font-family: inherit;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   width: 50vw;
   max-width: 500px;
   background: $pale-gold;
