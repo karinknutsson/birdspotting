@@ -145,6 +145,7 @@ p {
 }
 
 .centered {
+  width: 100%;
   text-align: center;
 }
 
@@ -197,4 +198,34 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .margin-top-40 {
+    margin-top: 20px;
+  }
+
+  .margin-top-64 {
+    margin-top: 32px;
+  }
+
+  .margin-bottom-16 {
+    margin-bottom: 8px;
+  }
+
+  .margin-bottom-24 {
+    margin-bottom: 12px;
+  }
+
+  .margin-bottom-40 {
+    margin-bottom: 20px;
+  }
+
+  h4 {
+    margin: 16px 0 8px 0;
+  }
+
+  h5 {
+    margin-top: 16px;
+  }
 }
