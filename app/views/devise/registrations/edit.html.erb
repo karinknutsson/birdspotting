@@ -1,6 +1,8 @@
 <div class="white-auto-container">
     <div class="form-container padding-16">
-        <h4>Settings</h4>
+        <div class="title-container">
+            <h4>Settings</h4>
+        </div>
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
             <%= f.error_notification %>
 

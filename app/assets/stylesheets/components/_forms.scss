@@ -39,6 +39,12 @@ textarea#user_bio, textarea#spot_note {
   align-items: center;
 }
 
+.title-container {
+  width: 100%;
+  display: flex;
+  align-items: start;
+}
+
 .form-control {
   border: 0 !important;
 }
