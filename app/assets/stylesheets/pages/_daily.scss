@@ -20,7 +20,7 @@
     font-weight: 600;
   }
   li:nth-child(odd) {
-    background: $pale-gold;
+    background: $light-slate;
   }
   li:nth-child(even) {
     background: white;
@@ -29,7 +29,7 @@
 
 .daily-details {
   width: 100%;
-  max-width: 400px;
+  max-width: 320px;
 }
 
 .daily-title {
@@ -37,7 +37,7 @@
   width: 100%;
   padding: 12px;
   color: white;
-  background: $light-slate;
+  background: $gold;
   border-radius: 3px;
   display: table;
   text-align: center;
@@ -59,4 +59,10 @@
     font-size: 0.6rem;
   }
   float: right;
+}
+
+@media (max-width: 1000px) {
+  .daily-details {
+    max-width: 500px;
+  }
 }

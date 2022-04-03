@@ -21,6 +21,13 @@
   }
 }
 
+.btn-oblong {
+  width: 50vw;
+  max-width: 500px;
+  height: 48px;
+  border-radius: 3px;
+}
+
 @media (max-width: 600px) {
   .btn-bird {
     font-size: 12pt;
@@ -30,13 +37,10 @@
     width: 72px;
     height: 72px;
   }
-}
 
-.btn-oblong {
-  width: 50vw;
-  max-width: 500px;
-  height: 48px;
-  border-radius: 3px;
+  .btn-oblong {
+    width: 82vw;
+  }
 }
 
 .btn-mag-outline {

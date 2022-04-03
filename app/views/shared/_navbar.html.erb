@@ -1,13 +1,13 @@
 <div class="container-fluid nav-container">
     <div class="row">
-        <div class="col-0 col-sm-1 col-md-2"></div>
-        <div class="col-12 col-sm-10 col-md-8 nav-links">
+        <div class="col-0 col-sm-0 col-md-1"></div>
+        <div class="col-12 col-sm-12 col-md-10 nav-links">
 
                 <div style="flex-grow: 0; flex-shrink: 0">
                     <%= render "shared/logo-navbar" %>
                 </div>
 
-                <div class="center-flex" style="flex-grow: 4">
+                <div class="nav-links-right">
                     <%= button_to "Profile", profile_path(current_user), method: :get, class: "nav-btn" %>
                     <%= button_to "Birds", birds_path, method: :get, class: "nav-btn" %>
                     <%= button_to "New\nspot", new_user_spot_path(current_user), method: :get, class: "spot-btn" %>
@@ -16,7 +16,7 @@
                 </div>
 
         </div>
-        <div class="col-0 col-sm-1 col-md-2"></div>
+        <div class="col-0 col-sm-0 col-md-1"></div>
 
     </div>
 </div>
