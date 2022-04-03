@@ -10,6 +10,28 @@
   border-radius: 100px;
 }
 
+@media (max-width: 1000px) {
+  .btn-bird {
+    font-size: 14pt;
+  }
+
+  .btn-round {
+    width: 88px;
+    height: 88px;
+  }
+}
+
+@media (max-width: 600px) {
+  .btn-bird {
+    font-size: 12pt;
+  }
+
+  .btn-round {
+    width: 72px;
+    height: 72px;
+  }
+}
+
 .btn-oblong {
   width: 50vw;
   max-width: 500px;
@@ -49,10 +71,6 @@
 .btn-gold:hover, btn-gold:active {
   background: $pink-magenta;
   color: white;
-}
-
-.btn-home {
-  margin: 0 100px;
 }
 
 .btn-fill {
