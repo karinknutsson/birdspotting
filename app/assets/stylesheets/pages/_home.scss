@@ -7,10 +7,33 @@
 .home-buttons {
   padding: 40px;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 h1.home {
   margin-top: 32px;
   margin-bottom: 40px;
   font-size: 42pt;
+}
+
+@media (max-width: 1000px) {
+  h1.home {
+    font-size: 28pt;
+  }
+
+  .home-buttons {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  h1.home {
+    font-size: 16pt;
+  }
+
+  .home-buttons {
+    padding: 20px;
+  }
 }

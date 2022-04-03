@@ -1,50 +1,55 @@
 <div class="white-auto-container">
-    <h4>New spot</h4>
-    <%= simple_form_for [@user, @spot] do |f| %>
-        <div class="form-inputs">
-            <div class="label-input">
-                Bird species:
-                <%= f.collection_select :bird_id, Bird.order(:name), :id, :name, include_blank: true %>
-            </div>
-            <div style="text-align: right">
-                <h6>Species not found? <%= link_to "Add new bird", new_bird_path %></h6>
-            </div>
-            <div class="label-input">
-                Location:
-                <%= f.input :location,
-                          required: true,
-                          label: false,
-                          input_html: { placeholder: "address or city" } %>
-            </div>
-            <div class="label-input">
-                Number of birds:
-                <%= f.input :number,
-                          required: true,
-                          label: false,
-                          input_html: { min: '1' } %>
-            </div>
-            <div class="label-input">
-                Date:
-                <%= f.input :spot_date,
-                          required: true,
-                          label: false %>
-            </div>
-            <div class="label-input">
-                Notes:
-                <%= f.input :note,
-                          label: false,
-                          as: :text,
-                          input_html: { 'rows': 5, 'cols': 60, maxlength: 2000 } %>
-            </div>
-            <div class="label-input margin-top-40">
-                Photos:
-                <%= f.input :photos, label: false, input_html: { multiple: true } %>
-            </div>
-            </div>
-        <div class="form-actions margin-top-40 margin-bottom-40">
-            <%= f.button :submit, "Submit", class: "btn-bird btn-oblong btn-gold" %>
+    <div class="form-container padding-16">
+        <div class="title-container">
+            <h4>New spot</h4>
         </div>
-    <% end %>
+        <%= simple_form_for [@user, @spot] do |f| %>
+            <div class="form-inputs">
+                <div class="label-input">
+                    Bird species:
+                    <%= f.collection_select :bird_id, Bird.order(:name), :id, :name, include_blank: true %>
+                </div>
+                <div style="text-align: right">
+                    <h6>Species not found? <%= link_to "Add new bird", new_bird_path %></h6>
+                </div>
+                <div class="label-input">
+                    Location:
+                    <%= f.input :location,
+                              required: true,
+                              label: false,
+                              input_html: { placeholder: "address or city" } %>
+                </div>
+                <div class="label-input">
+                    Number of birds:
+                    <%= f.input :number,
+                              required: true,
+                              label: false,
+                              input_html: { min: '1' } %>
+                </div>
+                <div class="label-input">
+                    Date:
+                    <%= f.input :spot_date,
+                              required: true,
+                              label: false %>
+                </div>
+                <div class="label-input">
+                    Notes:
+                    <%= f.input :note,
+                              label: false,
+                              as: :text,
+                              input_html: { 'rows': 5, 'cols': 60, maxlength: 2000 } %>
+                </div>
+                <div class="label-input margin-top-40">
+                    Photos:
+                    <%= f.input :photos, label: false, input_html: { multiple: true } %>
+                </div>
+                </div>
+            <div class="form-actions margin-top-40 margin-bottom-40">
+                <%= f.button :submit, "Submit", class: "btn-bird btn-oblong btn-gold" %>
+            </div>
+        <% end %>
+
+    </div>
 </div>
 
 

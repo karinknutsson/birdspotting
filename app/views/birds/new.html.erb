@@ -1,20 +1,24 @@
 <div class="white-auto-container">
-    <div class="add-bird margin-bottom-40">
-        <h4>Add new bird species</h4>
-        <p>
-            To add a new bird species to the database, please find the English species name as listed on <a href="https://en.wikipedia.org/wiki/" target="_blank">Wikipedia.</a>
-            It is crucial that you find the name of a bird species, rather than a genus or a family of birds. For instance, <em>magpie</em> is not a species. To add the bird
-            commonly known as magpie in Europe, you would enter <em>eurasian magpie</em>.
-        </p>
-    </div>
-
-    <%= simple_form_for [@bird] do |f| %>
-        <%= f.input :name,
-                    label: false,
-                    required: true,
-                    input_html: { placeholder: "Bird species name (case-insensitive)" } %>
-        <div class="form-actions margin-top-40 margin-bottom-24">
-            <%= f.button :submit, "Submit", class: "btn-bird btn-oblong btn-gold" %>
+    <div class="form-container">
+        <div class="add-bird margin-bottom-40">
+            <div class="title-container">
+                <h4>Add new bird species</h4>
+            </div>
+            <p>
+                To add a new bird species to the database, please find the English species name as listed on <a href="https://en.wikipedia.org/wiki/" target="_blank">Wikipedia.</a>
+                It is crucial that you find the name of a bird species, rather than a genus or a family of birds. For instance, <em>magpie</em> is not a species. To add the bird
+                commonly known as magpie in Europe, you would enter <em>eurasian magpie</em>.
+            </p>
         </div>
-    <% end %>
+
+        <%= simple_form_for [@bird] do |f| %>
+            <%= f.input :name,
+                        label: false,
+                        required: true,
+                        input_html: { placeholder: "Bird species name (case-insensitive)" } %>
+            <div class="form-actions margin-top-40 margin-bottom-24">
+                <%= f.button :submit, "Submit", class: "btn-bird btn-oblong btn-gold" %>
+            </div>
+        <% end %>
+    </div>
 </div>
