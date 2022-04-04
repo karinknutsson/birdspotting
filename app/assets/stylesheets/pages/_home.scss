@@ -1,5 +1,5 @@
 .home-logo {
-  margin: 32px 16px;
+  margin: 32px auto;
   width: 340px !important;
   height: auto;
 }
@@ -29,6 +29,13 @@ h1.home {
 }
 
 @media (max-width: 600px) {
+  .home-logo {
+    margin: 40px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   h1.home {
     font-size: 16pt;
   }
