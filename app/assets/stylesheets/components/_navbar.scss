@@ -63,6 +63,11 @@
 }
 
 @media (max-width: 1000px) {
+  .nav-btn, .spot-btn {
+    margin: 6px;
+    font-size: 10pt;
+  }
+
   .nav-links-right {
     justify-content: center;
   }
