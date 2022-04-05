@@ -31,12 +31,13 @@ h1.home {
 
 @media (max-width: 600px) {
   .home-logo {
-    margin: 40px auto;
+    margin: 32px auto;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding-left: 0;
+    height: auto;
+    padding-right: 16px;
   }
 
   h1.home {
