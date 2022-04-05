@@ -28,8 +28,10 @@ body {
   /* ---  FOREST PHOTO BY PIXABAY  --- */
   /*  https://www.pexels.com/@pixabay  */
   background-image: url('pexels-pixabay.jpg');
+  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 textarea:focus, input:focus {
