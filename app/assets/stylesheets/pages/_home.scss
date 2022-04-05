@@ -1,6 +1,6 @@
 .home-logo {
   margin: 32px 0;
-  width: 340px !important;
+  width: 340px;
   height: auto;
   padding-left: 16px;
 }
@@ -31,13 +31,13 @@ h1.home {
 
 @media (max-width: 600px) {
   .home-logo {
-    margin: 32px auto;
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: auto;
-    padding-right: 16px;
+    height: 120px;
+    padding: 16px;
   }
 
   h1.home {
