@@ -1,0 +1,4 @@
+<p><%= direct_message.body %></p>
+<p>at <strong><%= direct_message.created_at %></strong><br>
+  by <strong><%= link_to direct_message.user.username, profile_path(direct_message.user) %></strong></p>
+<hr>

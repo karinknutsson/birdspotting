@@ -2,6 +2,7 @@
   font-family: inherit;
   font-weight: 900;
   font-size: 16pt;
+  border: 0;
 }
 
 .btn-round {
@@ -108,4 +109,10 @@
 
 .back-btn:hover {
   background: $pink-magenta;
+}
+
+.dm-btn {
+  width: 320px;
+  height: 48px;
+  border-radius: 3px;
 }

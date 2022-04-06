@@ -20,12 +20,19 @@ input[type=text], input[type=password], input[type=email] {
   border-radius: 3px;
 }
 
-textarea#user_bio, textarea#spot_note {
+textarea#user_bio, textarea#spot_note, textarea#direct_message_body {
   resize: none;
   font-weight: 700 !important;
   background: $pale-gold;
   width: 50vw;
   max-width: 500px;
+  border: 0;
+  border-radius: 3px;
+}
+
+textarea#direct_message_body {
+  margin-top: 24px;
+  height: 160px;
 }
 
 ::placeholder {

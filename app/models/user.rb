@@ -9,8 +9,8 @@ class User < ApplicationRecord
   has_many :spots, dependent: :destroy
   has_one_attached :avatar, dependent: :destroy
 
-  has_many :authored_conversations, class_name: 'Conversation', foreign_key: 'author_id'
-  has_many :received_conversations, class_name: 'Conversation', foreign_key: 'received_id'
+  has_many :authored_chats, class_name: 'Chat', foreign_key: 'author_id'
+  has_many :received_chats, class_name: 'Chat', foreign_key: 'received_id'
   has_many :direct_messages, dependent: :destroy
 
   validates :username, presence: true, uniqueness: { case_sensitive: false }

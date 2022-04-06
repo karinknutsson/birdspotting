@@ -1,0 +1,23 @@
+<div class="white-auto-container">
+    <h4>Chatting with <%= @chat.with(current_user).username %></h4>
+
+    <div id="chat-main">
+      <div id="chat-body">
+        <%= render @chat.direct_messages %>
+      </div>
+
+      <%= simple_form_for @direct_message do |f| %>
+        <%= hidden_field_tag 'chat_id', @chat.id %>
+
+        <%= f.text_area :body,
+                    label: false,
+                    required: true,
+                    as: :text,
+                    input_html: { 'rows': 5, 'cols': 10, maxlength: 1200 } %>
+
+        <div class="form-actions margin-top-40 margin-bottom-16">
+            <%= f.submit "Submit", class: "btn-bird btn-oblong btn-gold" %>
+        </div>
+      <% end %>
+    </div>
+</div>
