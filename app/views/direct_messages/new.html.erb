@@ -1,10 +1,23 @@
-<h1>New message to <%= @receiver.username %></h1>
+<div class="white-auto-container">
+    <h4>New message to <%= @receiver.username %></h4>
 
-<%= form_for @direct_message do |f| %>
-  <%= hidden_field_tag 'receiver_id', @receiver.id %>
+    <div class="form-container padding-16">
+        <%= simple_form_for @direct_message do |f| %>
+            <div class="form-inputs">
 
-  <%= f.label :body %>
-  <%= f.text_area :body %>
+                <%= hidden_field_tag 'receiver_id', @receiver.id %>
 
-  <%= f.submit %>
-<% end %>
+                <%= f.text_area :body,
+                            label: false,
+                            required: true,
+                            as: :text,
+                            input_html: { 'rows': 5, 'cols': 10, maxlength: 1200 } %>
+
+                <div class="form-actions margin-top-40 margin-bottom-16">
+                    <%= f.submit "Submit", class: "btn-bird btn-oblong btn-gold" %>
+                </div>
+
+            </div>
+        <% end %>
+    </div>
+</div>

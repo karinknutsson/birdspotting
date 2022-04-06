@@ -34,6 +34,11 @@ body {
   background-attachment: fixed;
 }
 
+hr {
+  border: 2px solid $light-slate;
+  border-radius: 2px;
+}
+
 textarea:focus, input:focus {
   outline: none !important;
   border-color: inherit !important;
