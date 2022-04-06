@@ -1,0 +1,21 @@
+spot_1:
+  id: 1
+  bird_id: 1
+  user_id: 1
+  location: "Berlin"
+  note: "one beautiful magpie!"
+  number: 1
+spot_2:
+  id: 2
+  bird_id: 2
+  user_id: 1
+  location: "Berlin"
+  note: "two beautiful blue tits!"
+  number: 2
+spot_3:
+  id: 3
+  bird_id: 3
+  user_id: 1
+  location: "Berlin"
+  note: "three beautiful mute swans!"
+  number: 3

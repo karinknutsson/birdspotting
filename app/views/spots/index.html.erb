@@ -3,7 +3,7 @@
         <h4>All spots by <%= @user.username %>:</h4>
         <ul style="margin-top: 32px">
             <% @spots.each do |spot| %>
-                <li><%= link_to "#{spot.bird.name} in #{spot.location} on #{spot.spot_date}", user_spot_path(@user, spot) %></li>
+                <li class="spot"><%= link_to "#{spot.bird.name} in #{spot.location} on #{spot.spot_date}", user_spot_path(@user, spot) %></li>
             <% end %>
         </ul>
     </div>

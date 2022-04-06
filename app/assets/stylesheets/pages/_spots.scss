@@ -81,16 +81,16 @@
     margin-top: 16px;
     width: 100%;
   }
-  li {
+  li.spot {
     margin: 0;
     padding: 6px 12px;
     font-size: 11pt;
     font-weight: 600;
   }
-  li:nth-child(odd) {
+  li.spot:nth-child(odd) {
     background: $light-slate;
   }
-  li:nth-child(even) {
+  li.spot:nth-child(even) {
     background: white;
   }
 }
