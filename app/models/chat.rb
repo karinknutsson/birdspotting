@@ -3,7 +3,7 @@ class Chat < ApplicationRecord
     belongs_to :receiver, class_name: 'User'
 
     validates :author, uniqueness: {scope: :receiver}
-    has_many :direct_messages, -> { order(created_at: :asc) }, dependent: :destroy
+    has_many :direct_messages, -> { order(created_at: :desc) }, dependent: :destroy
 
     scope :participating, -> (user) do
       where("(chats.author_id = ? OR chats.receiver_id = ?)", user.id, user.id)

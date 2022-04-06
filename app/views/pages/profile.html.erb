@@ -10,7 +10,9 @@
             <% end %>
 
             <% if @user != current_user %>
-                <%= link_to 'send a message', new_direct_message_path(receiver_id: @user) %>
+                <%= button_to 'send a message', new_direct_message_path, params: { receiver_id: @user.id }, method: :get, class: "btn-bird dm-btn btn-gold margin-top-40" %>
+            <% else %>
+                <%= button_to 'Messages', chats_path, method: :get, class: "btn-bird dm-btn btn-gold margin-top-40" %>
             <% end %>
         </div>
 

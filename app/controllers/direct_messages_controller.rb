@@ -2,7 +2,7 @@ class DirectMessagesController < ApplicationController
   before_action :find_chat!
   
   def new
-    redirect_to chats_path(@chat) and return if @chat
+    #redirect_to chat_path(@chat) and return if @chat
     @direct_message = current_user.direct_messages.build
     authorize @direct_message
   end
