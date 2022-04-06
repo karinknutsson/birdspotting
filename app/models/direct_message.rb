@@ -1,5 +1,5 @@
 class DirectMessage < ApplicationRecord
-  belongs_to :conversation
+  belongs_to :chat
   belongs_to :user
 
   validates :body, presence: true

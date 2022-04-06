@@ -1,0 +1,15 @@
+<h1>Chatting with <%= @chat.with(current_user).name %></h1>
+
+<div id="chat-main">
+  <div id="chat-body">
+    <%= render @chat.direct_messages %>
+  </div>
+
+  <%= form_for @direct_message do |f| %>
+    <%= hidden_field_tag 'chat_id', @chat.id %>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+
+    <%= f.submit %>
+  <% end %>
+</div>
