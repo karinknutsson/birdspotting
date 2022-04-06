@@ -4,6 +4,6 @@ class BirdsTest < ApplicationSystemTestCase
   test "visiting the index" do
     login_as users(:marge)
     visit "/birds"
-    assert_selector("li.bird", count: Bird.count)
+    assert_selector("li.birdie", count: Bird.count)
   end
 end
