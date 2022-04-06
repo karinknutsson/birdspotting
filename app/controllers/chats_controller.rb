@@ -19,10 +19,6 @@ class ChatsController < ApplicationController
     end
 
     def check_participating!
-      redirect_to root_path unless @chat && @chat.participates?(current_user)
-    end
-
-    def participates?(user)
-      author == user || receiver == user
+      redirect_to chats_path unless @chat && @chat.participates?(current_user)
     end
 end

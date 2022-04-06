@@ -32,4 +32,8 @@ class ChatPolicy < ApplicationPolicy
   def destroy?
     true
   end
+
+  def participates?
+    true
+  end
 end

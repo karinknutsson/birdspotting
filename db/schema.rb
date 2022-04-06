@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_06_095826) do
+ActiveRecord::Schema.define(version: 2022_04_06_103415) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,11 +56,11 @@ ActiveRecord::Schema.define(version: 2022_04_06_095826) do
 
   create_table "direct_messages", force: :cascade do |t|
     t.text "body"
-    t.bigint "conversation_id", null: false
+    t.bigint "chat_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["conversation_id"], name: "index_direct_messages_on_conversation_id"
+    t.index ["chat_id"], name: "index_direct_messages_on_chat_id"
     t.index ["user_id"], name: "index_direct_messages_on_user_id"
   end
 
@@ -104,7 +104,7 @@ ActiveRecord::Schema.define(version: 2022_04_06_095826) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "direct_messages", "chats", column: "conversation_id"
+  add_foreign_key "direct_messages", "chats"
   add_foreign_key "direct_messages", "users"
   add_foreign_key "events", "users", name: "events_user_id_fkey"
   add_foreign_key "spots", "birds"
