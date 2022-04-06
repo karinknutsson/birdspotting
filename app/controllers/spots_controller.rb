@@ -3,15 +3,8 @@ class SpotsController < ApplicationController
   before_action :set_user
 
   def index
-    @spots = Spot.where(user_id: @user.id).where.not(latitude: nil, longitude: nil)
+    @spots = Spot.where(user_id: @user)
     policy_scope @spots
-
-    @markers = @spots.map do |spot|
-      {
-        lng: spot.longitude,
-        lat: spot.latitude
-      }
-    end
   end
 
   def show
