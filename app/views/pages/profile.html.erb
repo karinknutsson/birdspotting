@@ -8,6 +8,10 @@
             <% else %>
                 <%= image_tag "avatar_default.png" %>
             <% end %>
+
+            <% if @user != current_user %>
+                <%= link_to 'send a message', new_direct_message_path(receiver_id: @user) %>
+            <% end %>
         </div>
 
         <div class="profile-info">

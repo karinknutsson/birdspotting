@@ -23,4 +23,7 @@ Rails.application.routes.draw do
   get '/life_list/:id', to: 'pages#life_list', as: 'life_list'
 
   get '/messages/:id', to: 'chats#index', as: 'messages'
+
+  resources :direct_messages, only: [:create]
+  resources :chats, only: [:index, :show]
 end
