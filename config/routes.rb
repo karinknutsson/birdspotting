@@ -24,6 +24,6 @@ Rails.application.routes.draw do
 
   get '/messages/:id', to: 'chats#index', as: 'messages'
 
-  resources :direct_messages, only: [:create]
+  resources :direct_messages, only: [:new, :create]
   resources :chats, only: [:index, :show]
 end

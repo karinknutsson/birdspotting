@@ -3,7 +3,7 @@ class ChatsController < ApplicationController
     before_action :check_participating!, except: [:index]
 
     def index
-      @chats = chat.participating(current_user).order('updated_at DESC')
+      @chats = Chat.participating(current_user).order('updated_at ASC')
       policy_scope @chats
     end
 
@@ -15,7 +15,7 @@ class ChatsController < ApplicationController
     private
 
     def set_chat
-      @chat = chat.find_by(id: params[:id])
+      @chat = Chat.find_by(id: params[:id])
     end
 
     def check_participating!
