@@ -21,4 +21,6 @@ Rails.application.routes.draw do
   get '/profile/:id', to: 'pages#profile', as: 'profile'
   get 'settings', to: 'pages#settings', as: 'settings'
   get '/life_list/:id', to: 'pages#life_list', as: 'life_list'
+
+  get '/messages/:id', to: 'conversations#index', as: 'messages'
 end

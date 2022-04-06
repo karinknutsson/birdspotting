@@ -4,4 +4,12 @@ class Conversation < ApplicationRecord
 
     validates :author, uniqueness: {scope: :receiver}
     has_many :direct_messages, -> { order(created_at: :asc) }, dependent: :destroy
+
+    scope :participating, -> (user) do
+      where("(conversations.author_id = ? OR conversations.receiver_id = ?)", user.id, user.id)
+    end
+
+    def with(current_user)
+      author == current_user ? receiver : author
+    end
 end
