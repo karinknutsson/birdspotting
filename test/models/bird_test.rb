@@ -1,7 +1,9 @@
 require 'test_helper'
 
 class BirdTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test 'valid bird' do
+  end
+
+  test 'invalid without name' do
+  end
 end
