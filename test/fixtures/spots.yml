@@ -5,6 +5,7 @@ spot_1:
   location: "Berlin"
   note: "one beautiful magpie!"
   number: 1
+
 spot_2:
   id: 2
   bird_id: 2
@@ -12,6 +13,7 @@ spot_2:
   location: "Berlin"
   note: "two beautiful blue tits!"
   number: 2
+
 spot_3:
   id: 3
   bird_id: 3
