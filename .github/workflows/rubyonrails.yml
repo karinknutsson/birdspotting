@@ -39,5 +39,5 @@ jobs:
       # Add or replace test runners here
       - name: Run tests
         run: |
-          bundle exec rails test:system test
-          bin/rake
+          bundle exec rails test
+          bundle exec rake test:system
