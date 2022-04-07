@@ -13,7 +13,7 @@ class User < ApplicationRecord
   has_many :received_chats, class_name: 'Chat', foreign_key: 'received_id'
   has_many :direct_messages, dependent: :destroy
 
-  validates :username, :email, presence: true, uniqueness: { case_sensitive: false }
+  validates :username, presence: true, uniqueness: { case_sensitive: false }
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
   validates :username, length: { in: 2..15 }
 
