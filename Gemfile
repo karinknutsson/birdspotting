@@ -37,6 +37,10 @@ gem 'cloudinary', '~> 1.16.0'
 gem 'faker'
 gem 'geocoder'
 
+group :brakeman do
+  gem 'brakeman'
+end
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
