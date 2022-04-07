@@ -9,4 +9,7 @@ class UserTest < ActiveSupport::TestCase
 
     test 'invalid without email' do
     end
+
+        test 'invalid without last_name' do
+        end
 end
