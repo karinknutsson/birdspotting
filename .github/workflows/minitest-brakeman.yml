@@ -23,21 +23,22 @@ jobs:
         options: --health-cmd "redis-cli ping" --health-interval 10s --health-timeout 5s --health-retries 5
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
 
       - name: Install required packages
         run: |
           sudo apt-get update
           sudo apt-get install --yes libpq-dev
       - name: Set up Ruby
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@8f312efe1262fb463d906e9bf040319394c18d3e # v1.92
         with:
           ruby-version: 2.6.3
 
       - name: Set up Node
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: 12.13.0
+          node-version: 16
 
       - name: Set up gems cache
         uses: actions/cache@preview
