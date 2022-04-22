@@ -1,0 +1,53 @@
+name: "Spot the Bird CI"
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:11-alpine
+        ports:
+          - "5432:5432"
+        env:
+          POSTGRES_DB: birdspotting_test
+          POSTGRES_USER: columbidae
+          POSTGRES_PASSWORD: columbidae
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      RAILS_ENV: test
+      NODE_ENV: test
+      DATABASE_URL: "postgres://columbidae:columbidae@localhost:5432/birdspotting_test"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@8f312efe1262fb463d906e9bf040319394c18d3e # v1.92
+        with:
+          bundler-cache: true
+      - name: Set up Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: "17.5.0"
+      - name: Yarn install
+        run: yarn install --frozen-lockfile
+      - name: Prepare DB
+        run: | # Pipe is important, adds line breaks
+          cp config/database.github.yml config/database.yml
+          bundle exec rails db:test:prepare
+      - name: Run model tests
+        run: bundle exec rails test
+      - name: Run system tests
+        run: bundle exec rails test:system
+      - name: Upload artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: surefire-reports
+          path: mymeeave/target/surefire-reports/**
