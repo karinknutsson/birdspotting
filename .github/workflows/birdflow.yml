@@ -46,8 +46,3 @@ jobs:
         run: bundle exec rails test
       - name: Run system tests
         run: bundle exec rails test:system
-      - name: Upload artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: surefire-reports
-          path: mymeeave/target/surefire-reports/**
