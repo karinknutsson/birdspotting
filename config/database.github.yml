@@ -1,0 +1,8 @@
+test:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  port: 5432
+  username: columbidae
+  password: columbidae
+  database: birdspotting_test
