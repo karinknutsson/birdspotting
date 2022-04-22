@@ -3,6 +3,6 @@ test:
   encoding: unicode
   host: localhost
   port: 5432
-  username: postgres
-  password: postgres
+  username: columbidae
+  password: columbidae
   database: birdspotting_test
