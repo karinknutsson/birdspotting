@@ -3,7 +3,7 @@
         <h4>All birds spotted by <%= @user.username %>:</h4>
         <ul style="margin-top: 32px">
             <% @birds.each do |bird| %>
-                <li><%= link_to "#{bird.name}", bird_path(bird) %></li>
+                <li class="spot"><%= link_to "#{bird.name}", bird_path(bird) %></li>
             <% end %>
         </ul>
     </div>
