@@ -1,7 +1,9 @@
 require 'test_helper'
 
 class DirectMessageTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+    test 'valid direct_message' do
+    end
+
+    test 'invalid without body' do
+    end
 end

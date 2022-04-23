@@ -64,15 +64,6 @@ ActiveRecord::Schema.define(version: 2022_04_06_103415) do
     t.index ["user_id"], name: "index_direct_messages_on_user_id"
   end
 
-  create_table "events", id: :serial, force: :cascade do |t|
-    t.string "url"
-    t.datetime "startDate", null: false
-    t.datetime "endDate", null: false
-    t.string "name", null: false
-    t.text "description"
-    t.integer "user_id"
-  end
-
   create_table "spots", force: :cascade do |t|
     t.time "time"
     t.string "location"
@@ -106,7 +97,6 @@ ActiveRecord::Schema.define(version: 2022_04_06_103415) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "direct_messages", "chats"
   add_foreign_key "direct_messages", "users"
-  add_foreign_key "events", "users", name: "events_user_id_fkey"
   add_foreign_key "spots", "birds"
   add_foreign_key "spots", "users"
 end

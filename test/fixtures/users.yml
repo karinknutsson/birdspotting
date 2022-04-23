@@ -3,3 +3,8 @@ marge:
   email: marge@email.com
   username: "Marge"
   bio: "Hello! My name is Marge and I do not actually exist. Do you?"
+
+jovi:
+  id: 2
+  email: jovi@email.com
+  bio: "Hello! My name is Jovi and I do not actually exist. Do you?"
